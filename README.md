@@ -1,26 +1,20 @@
-# Let’s Build a Custom Developer’s Genesis Starter Child Theme Lab
+# Genesis Developer's Starter Child Theme
 
-Lab Date: July 21, 2016
+This is a developer-friendly starter child theme for the [Genesis theming framework](http://my.studiopress.com/themes/genesis/) which includes a modular architecture, Sass, gulp, Bourbon, Neat, and Composer.  It is your starting child theme for all of your projects to save you time and moola. 
 
-This [hands-on coding lab](https://knowthecode.io/series/lets-build-custom-developers-genesis-starter-child-theme) walks you through the entire process of converting a standard Genesis theme into a developer-friendly, modular theme.  The purpose of this lab is to teach you about the following:
+To see the entire lab series which built this child theme, go to: [Let’s Build a Custom Developer’s Genesis Starter Child Theme](https://knowthecode.io/labs-guide/lets-build-custom-developers-genesis-starter-child-theme).
 
-1. Techniques to save you time and time as you are building your own workflow and starter theme
-2. Modularity for PHP and CSS
-3. How to break up your code to be more readable, reusable, and thus, more maintainable.
-4. How to convert a `style.css` file into a Sass module
-5. How to setup Gulp as your task runner to process the Sass into `style.css` and a minified version `style.min.css`
-6. How to build your own modern workflow with Composer, Sass, Gulp, Bourbon, and Neat.
+This child theme is yours.  It's meant to be extended, customized, and changed to fit your needs.  Make it your own.  And then use it on every project.
 
-## What's in this repository?
+## Features
 
-There are 2 separate themes in this repository:
+This theme includes the following features:
 
-1. Version 2.2.4 of the Genesis Sample Theme
-2. The final Developers Starter Child Theme - it's the final version that you will build in this lab
-
-## How about the new version of the Sample Theme?
-
-Late in 2016, StudioPress upgraded the Sample theme to include a WooCommerce module.  Once you complete this lab, you will be able to add the new updates to your Developers theme by yourself.
+- Modular programming architecture
+- Configuration-based architecture
+- Modular CSS via Sass
+- Task runner uses gulp
+- Uses Bourbon and Neat
 
 ## Dependencies
 
@@ -28,17 +22,11 @@ This child theme requires the following dependencies:
 
 - [Genesis framework](http://my.studiopress.com/themes/genesis/)
 - [WordPress](https://wordpress.org/download/)
+- Node.js and npm installed on your local machine - here are the [Mac]((https://knowthecode.io/labs/local-development-environment-setup-mac/node-npm)) and [Windows](https://knowthecode.io/labs/local-development-environment-setup-windows/node-npm) labs to help you out
 
 ## Installation
 
-To install this repository, do the following:
-
-1. Open up terminal and navigate to the `wp-content/themes` folder.
-2. Then type: git clone [git@github.com:KnowTheCode/Genesis-Developer-Starter-Lab.git](git@github.com:KnowTheCode/Genesis-Developer-Starter-Lab.git)
-3. Then move both themes out of the new folder and into the root of the `wp-content/themes` folder.
-4. You can then delete the new folder, as it's not needed any longer.
-
-You will use the Genesis Sample theme in this repository for the lab.
+The theme needs for you to install the node modules in order to run gulp.  To do that, navigate into the theme and in the command line (terminal or Bash), type: `npm install` and then enter.  
 
 ## Contributors
 
