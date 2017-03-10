@@ -2,13 +2,13 @@
 /**
  * Adds the CSS from the Customizer options.
  *
- * @package     KnowTheCode\Developers
+ * @package     TimJensen\GenesisStarter
  * @since       1.0.0
- * @author      hellofromTonya
- * @link        https://knowthecode.io
+ * @author      Tim Jensen
+ * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace KnowTheCode\Developers\Customizer;
+namespace TimJensen\GenesisStarter\Customizer;
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\build_inline_css_from_customizer_settings' );
 /**

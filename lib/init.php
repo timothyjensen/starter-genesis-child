@@ -2,13 +2,13 @@
 /**
  * Theme initialization
  *
- * @package     KnowTheCode\Developers
+ * @package     TimJensen\GenesisStarter
  * @since       1.0.0
- * @author      hellofromTonya
- * @link        https://knowthecode.io
+ * @author      Tim Jensen
+ * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace KnowTheCode\Developers;
+namespace TimJensen\GenesisStarter;
 
 /**
  * Initialize the theme's constants.

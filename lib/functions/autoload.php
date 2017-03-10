@@ -10,13 +10,13 @@
  * go into a plugin and not in your theme.  If you put them here, I want you to picture me shaking my head back and
  * forth.  Come on....I taught you better than that.
  *
- * @package     KnowTheCode\Developers
+ * @package     TimJensen\GenesisStarter
  * @since       1.0.0
- * @author      hellofromTonya
- * @link        https://knowthecode.io
+ * @author      Tim Jensen
+ * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace KnowTheCode\Developers;
+namespace TimJensen\GenesisStarter;
 
 /**
  * Loads non admin files.

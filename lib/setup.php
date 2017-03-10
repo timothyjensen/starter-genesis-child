@@ -2,13 +2,13 @@
 /**
  * Setup your child theme
  *
- * @package     KnowTheCode\Developers
+ * @package     TimJensen\GenesisStarter
  * @since       1.0.3
- * @author      hellofromTonya
- * @link        https://knowthecode.io
+ * @author      Tim Jensen
+ * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace KnowTheCode\Developers;
+namespace TimJensen\GenesisStarter;
 
 add_action( 'genesis_setup', __NAMESPACE__ . '\setup_child_theme', 15 );
 /**
