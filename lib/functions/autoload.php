@@ -31,7 +31,7 @@ function load_nonadmin_files() {
 		'components/customizer/css-handler.php',
 		'components/customizer/helpers.php',
 		'functions/formatting.php',
-		'functions/load-assets.php',
+		'functions/enqueue.php',
 		'functions/markup.php',
 //		'structure/archive.php',
 		'structure/comments.php',

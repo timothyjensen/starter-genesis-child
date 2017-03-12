@@ -1,0 +1,36 @@
+/* ## Site Containers
+--------------------------------------------- */
+
+.site-inner,
+.wrap {
+	margin: 0 auto;
+
+	@media only screen and (min-width: 860px) {
+		max-width: 800px;
+	}
+}
+
+.site-inner {
+	clear: both;
+	padding: 5% 5% 0;
+	word-wrap: break-word;
+
+	@media only screen and (min-width: 860px) {
+		padding: 40px 0 0;
+	}
+
+	.landing-page & {
+		@media only screen and (min-width: 860px) {
+			max-width: 800px;
+		}
+	}
+}
+
+.wrap {
+	padding-left: 5%;
+	padding-right: 5%;
+
+	@media only screen and (min-width: 860px) {
+		padding: 0;
+	}
+}

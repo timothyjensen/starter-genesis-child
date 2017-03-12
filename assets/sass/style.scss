@@ -1,29 +1,90 @@
-/*!
-	Theme Name: Developers
-	Theme URI: https://www.timjensen.us
-
-	Description: The Genesis-powered Developer's Starter Child Theme
-	Author: Tim Jensen
-	Author URI: https://www.timjensen.us
+/*
+	Theme Name: Starter Genesis - Modular
+	Theme URI: http://www.studiopress.com/
+	Description: This is the sample theme created for the Genesis Framework.
+	Author: StudioPress
+	Author URI: http://www.studiopress.com/
 
 	Version: 1.0.0
 
-	Tags: responsive-layout, accessibility-ready
+	Tags: black, red, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 	Template: genesis
-	Template Version: 2.2.3
+	Template Version: 2.4.2
 
 	License: GPL-2.0+
-	License URI: http://www.opensource.org/licenses/gpl-license.php
-	Text Domain: developers
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+
+/* # Table of Contents
+- HTML5 Reset
+	- Baseline Normalize
+	- Box Sizing
+	- Float Clearing
+- Defaults
+	- Typographical Elements
+	- Headings
+	- Objects
+	- Gallery
+	- Forms
+	- Tables
+	- Screen Reader Text
+- Structure and Layout
+	- Site Containers
+- Common Classes
+	- Avatar
+	- Genesis
+	- Search Form
+	- Titles
+	- WordPress
+- Widgets
+	- Featured Content
+- Plugins
+	- Genesis eNews Extended
+	- Jetpack
+- Skip Links
+- Site Header
+	- Title Area
+- Site Navigation
+	- Accessible Menu
+	- Site Header Navigation
+	- After Header Navigation
+	- Responsive Navigation
+	- Footer Navigation
+- Content Area
+	- Entries
+	- Entry Meta
+	- Pagination
+	- Comments
+- Sidebars
+- Footer Widgets
+- Site Footer
+- Media Queries
+	- Min-width: 860px
+	- Min-width: 1023px
+	- Min-width: 1200px
+	- Min-width: 1340px
+- Print Styles
+*/
+
 @import 'bourbon';
 @import 'neat';
 @import '../../node_modules/sass-rem/rem';
 
-@import 'utilities/index';
-@import 'base/index';
-@import 'layouts/index';
-@import 'components/index';
+@import 'variables/index';
+
+@import 'reset/index';
+@import 'defaults/index';
+@import 'structure-layout/index';
+@import 'common-classes/index';
+@import 'widgets/index';
 @import 'plugins/index';
-@import 'views/index';
+@import 'skip-links/index';
+@import 'site-header/index';
+@import 'site-navigation/index';
+@import 'content-area/index';
+@import 'sidebars/index';
+@import 'footer-widgets/index';
+@import 'site-footer/index';
+@import 'media-queries/index';

@@ -1,0 +1,29 @@
+/*
+	Theme Name: Developers
+	Theme URI: https://www.timjensen.us
+
+	Description: The Genesis-powered Developer's Starter Child Theme
+	Author: Tim Jensen
+	Author URI: https://www.timjensen.us/
+
+	Version: 1.0.0
+
+	Tags: responsive-layout, accessibility-ready
+
+	Template: genesis
+	Template Version: 2.2.3
+
+	License: GPL-2.0+
+	License URI: http://www.opensource.org/licenses/gpl-license.php
+	Text Domain: developers
+*/
+@import 'bourbon';
+@import 'neat';
+@import '../../node_modules/sass-rem/rem';
+
+@import 'utilities/index';
+@import 'base/index';
+@import 'layouts/index';
+@import 'components/index';
+@import 'plugins/index';
+@import 'views/index';
