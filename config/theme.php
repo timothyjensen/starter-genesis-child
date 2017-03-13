@@ -1,6 +1,6 @@
 <?php
 /**
- * Description
+ * Child theme configuration
  *
  * @package     TimJensen\GenesisStarter
  * @since       1.0.0
@@ -8,17 +8,16 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace TimJensen\GenesisStarter;
+namespace TimJensen\GenesisStarter\ThemeConfig;
 
 return [
 	'navigation'     => [
 		'primary'   => [
 			'location' => 'header',
-			'menu_name' => 'Header Menu'
 		],
 		'secondary' => [
 			'location' => 'footer',
-			'menu_name' => 'Footer Menu'
+			'reduce_depth' => true,
 		]
 	],
 	'theme_supports' => [
@@ -46,12 +45,20 @@ return [
 			'flex-height'     => true,
 		],
 		'custom-background'               => null,
-		'genesis-after-entry-widget-area' => null,
-		'genesis-footer-widgets'          => 3,
+		'genesis-after-entry-widget-area' => false,
+		'genesis-footer-widgets'          => 1,
 		'genesis-menus'                   => [
-			'primary'   => __( 'After Header Menu', CHILD_TEXT_DOMAIN ),
+			'primary'   => __( 'Header Menu', CHILD_TEXT_DOMAIN ),
 			'secondary' => __( 'Footer Menu', CHILD_TEXT_DOMAIN )
 		],
+		'genesis-structural-wraps' => [
+			'header',
+			'menu-primary',
+			'menu-secondary',
+			'site-inner',
+			'footer-widgets',
+			'footer'
+		]
 	],
 	'image_sizes'    => [
 		'featured-image' => [
@@ -59,5 +66,10 @@ return [
 			'height' => 400,
 			'crop'   => true,
 		],
+	],
+	'unregister_layouts' => [
+		'content-sidebar-sidebar',
+		'sidebar-sidebar-content',
+		'sidebar-content-sidebar'
 	],
 ];

@@ -1,4 +1,5 @@
 @media only screen and (min-width: 1023px) {
+
     .five-sixths,
     .four-sixths,
     .one-fourth,
@@ -45,9 +46,9 @@
     .five-sixths {
         width: 82.90598290598291%;
     }
-}
 
-.first {
-    clear: both;
-    margin-left: 0;
+    div.first {
+        clear: both;
+        margin-left: 0;
+    }
 }

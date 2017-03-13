@@ -8,9 +8,9 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace TimJensen\GenesisStarter;
+namespace TimJensen\GenesisStarter\Enqueue;
 
-// Remove the child theme stylesheet that is loaded by Genesis.
+// Remove the child theme stylesheet that is loaded by Genesis so that we can enqueue a minified stylesheet.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
@@ -23,7 +23,8 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  */
 function enqueue_assets() {
 
-	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-stylesheet', get_stylesheet_directory_uri() . '/style.min.css', array(), CHILD_THEME_VERSION );
+	$suffix = ( defined( 'STYLE_DEBUG' ) && STYLE_DEBUG ) ? '' : '.min';
+	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-stylesheet', get_stylesheet_directory_uri() . "/style{$suffix}.css", array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
@@ -47,9 +48,9 @@ function enqueue_assets() {
 function responsive_menu_settings() {
 
 	return array(
-		'mainMenu'          => __( 'Menu', 'genesis-sample' ),
+		'mainMenu'          => __( 'Menu', CHILD_TEXT_DOMAIN ),
 		'menuIconClass'     => 'dashicons-before dashicons-menu',
-		'subMenu'           => __( 'Submenu', 'genesis-sample' ),
+		'subMenu'           => __( 'Submenu', CHILD_TEXT_DOMAIN ),
 		'subMenuIconsClass' => 'dashicons-before dashicons-arrow-down-alt2',
 		'menuClasses'       => array(
 			'combine' => array(

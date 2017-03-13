@@ -32,18 +32,25 @@
     position: relative;
     width: 100%;
     z-index: 1000;
-}
 
-.menu-toggle,
-.menu-toggle:focus,
-.menu-toggle:hover {
-    border-top: 1px solid #eee;
+    .header-nav & {
+        margin-right: 0;
+        position: relative;
+        width: auto;
+    }
 }
 
 .menu-toggle::before {
     font-size: 1.5em;
     margin-right: 10px;
     text-rendering: auto;
+
+    .header-nav & {
+        font-size: 2.4rem;
+        margin-right: 5px;
+        position: absolute;
+        right: 0;
+    }
 }
 
 .sub-menu-toggle {

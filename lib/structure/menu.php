@@ -8,13 +8,8 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace TimJensen\GenesisStarter;
+namespace TimJensen\GenesisStarter\Menus;
 
-
-// Reposition the secondary navigation menu
-add_action( 'genesis_footer', 'genesis_do_subnav', 5 );
-
-add_filter( 'wp_nav_menu_args', __NAMESPACE__ . '\setup_secondary_menu_args' );
 /**
  * Reduce the secondary navigation menu to one level depth.
  *

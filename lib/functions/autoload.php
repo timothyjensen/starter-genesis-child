@@ -28,20 +28,17 @@ namespace TimJensen\GenesisStarter;
 function load_nonadmin_files() {
 	$filenames = array(
 		'setup.php',
-		'components/customizer/css-handler.php',
-		'components/customizer/helpers.php',
 		'functions/helpers.php',
 		'functions/formatting.php',
 		'functions/enqueue.php',
 		'functions/markup.php',
-//		'structure/archive.php',
+		'structure/archive.php',
 		'structure/comments.php',
-//		'structure/footer.php',
-//		'structure/header.php',
+		'structure/footer.php',
+		'structure/header.php',
 		'structure/menu.php',
 		'structure/post.php',
-//		'structure/sidebar.php',
-		'components/customizer/customizer.php',
+		'structure/sidebar.php',
 	);
 
 	load_specified_files( $filenames );

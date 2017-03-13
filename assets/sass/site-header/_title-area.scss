@@ -4,6 +4,10 @@
 .title-area {
 	padding: 10px 0;
 
+	.header-nav & {
+		margin-right: auto;
+	}
+
 	@media only screen and (min-width: 1023px) {
 		.site-header & {
 			float: left;

@@ -8,15 +8,20 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace TimJensen\GenesisStarter;
+namespace TimJensen\GenesisStarter\Archive;
 
+add_filter( 'theme_page_templates', __NAMESPACE__ . '\remove_genesis_page_templates' );
 /**
- * Unregister archive callbacks.
+ * Remove Genesis Page Templates
  *
- * @since 1.0.0
+ * @param array $page_templates
  *
- * @return void
+ * @return array
  */
-function unregister_archive_callbacks() {
+function remove_genesis_page_templates( $page_templates ) {
 
+	unset( $page_templates['page_archive.php'] );
+	unset( $page_templates['page_blog.php'] );
+
+	return $page_templates;
 }

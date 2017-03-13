@@ -711,11 +711,6 @@ th:first-child {
 /* ## Column Widths and Positions
 --------------------------------------------- */
 
-.first {
-  clear: both;
-  margin-left: 0;
-}
-
 /* # Common Classes
 ---------------------------------------------------------------------------------------------------- */
 /* ## Avatar
@@ -1034,6 +1029,17 @@ img.alignright,
   background-color: #fff;
 }
 
+.site-header.header-nav > .wrap {
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
 .site-header > .wrap {
   padding: 20px 5%;
 }
@@ -1042,6 +1048,10 @@ img.alignright,
 --------------------------------------------- */
 .title-area {
   padding: 10px 0;
+}
+
+.header-nav .title-area {
+  margin-right: auto;
 }
 
 .header-image .title-area {
@@ -1108,6 +1118,11 @@ img.alignright,
 .nav-primary {
   background-color: #fff;
   border-top: 1px solid #eee;
+  width: 100%;
+}
+
+.header-nav .nav-primary {
+  border-top: none;
 }
 
 /* ## Responsive Navigation
@@ -1140,16 +1155,24 @@ img.alignright,
   z-index: 1000;
 }
 
-.menu-toggle,
-.menu-toggle:focus,
-.menu-toggle:hover {
-  border-top: 1px solid #eee;
+.header-nav .menu-toggle {
+  margin-right: 0;
+  position: relative;
+  width: auto;
 }
 
 .menu-toggle::before {
   font-size: 1.5em;
   margin-right: 10px;
   text-rendering: auto;
+}
+
+.header-nav .menu-toggle::before {
+  font-size: 24px;
+  font-size: 2.4rem;
+  margin-right: 5px;
+  position: absolute;
+  right: 0;
 }
 
 .sub-menu-toggle {
@@ -1694,6 +1717,10 @@ p.entry-meta {
   .five-sixths {
     width: 82.90598290598291%;
   }
+  div.first {
+    clear: both;
+    margin-left: 0;
+  }
   .site-header .search-form {
     float: right;
     margin: 12px auto 0;
@@ -1711,6 +1738,9 @@ p.entry-meta {
   }
   .site-header .widget-area {
     text-align: right;
+  }
+  .header-nav .nav-primary {
+    margin-left: auto;
   }
   .menu-toggle,
   .sub-menu-toggle {

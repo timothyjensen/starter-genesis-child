@@ -3,12 +3,19 @@
 
 .site-header {
 	background-color: $color-white;
-}
 
-.site-header > .wrap {
-	padding: 20px 5%;
+	&.header-nav > .wrap {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 
-	@media only screen and (min-width: 1023px) {
-		padding: 20px 0;
+	> .wrap {
+		padding: 20px 5%;
+
+		@media only screen and (min-width: 1023px) {
+			padding: 20px 0;
+		}
 	}
 }
