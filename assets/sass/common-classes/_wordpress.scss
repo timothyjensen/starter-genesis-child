@@ -51,9 +51,8 @@ img.alignright,
 
 .gallery-caption,
 .wp-caption-text {
-	font-size: 14px;
 	font-size: 1.4rem;
-	font-weight: 600;
+	font-weight: $font-weight-semi-bold;
 	margin: 0;
 	text-align: center;
 }

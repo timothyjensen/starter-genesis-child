@@ -215,45 +215,45 @@ input[type="search"] {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 /* ## Float Clearing
 --------------------------------------------- */
-.author-box:before,
-.clearfix:before,
-.entry:before,
-.entry-content:before,
-.footer-widgets:before,
-.nav-primary:before,
-.nav-secondary:before,
-.pagination:before,
-.site-container:before,
-.site-footer:before,
-.site-header:before,
-.site-inner:before,
-.widget:before,
-.wrap:before {
+.author-box::before,
+.clearfix::before,
+.entry::before,
+.entry-content::before,
+.footer-widgets::before,
+.nav-primary::before,
+.nav-secondary::before,
+.pagination::before,
+.site-container::before,
+.site-footer::before,
+.site-header::before,
+.site-inner::before,
+.widget::before,
+.wrap::before {
   content: " ";
   display: table;
 }
 
-.author-box:after,
-.clearfix:after,
-.entry:after,
-.entry-content:after,
-.footer-widgets:after,
-.nav-primary:after,
-.nav-secondary:after,
-.pagination:after,
-.site-container:after,
-.site-footer:after,
-.site-header:after,
-.site-inner:after,
-.widget:after,
-.wrap:after {
+.author-box::after,
+.clearfix::after,
+.entry::after,
+.entry-content::after,
+.footer-widgets::after,
+.nav-primary::after,
+.nav-secondary::after,
+.pagination::after,
+.site-container::after,
+.site-footer::after,
+.site-header::after,
+.site-inner::after,
+.widget::after,
+.wrap::after {
   clear: both;
   content: " ";
   display: table;
@@ -269,19 +269,19 @@ html {
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   background-color: #eee;
   color: #333;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   font-size: 1.8rem;
-  -webkit-font-smoothing: antialiased;
   font-weight: 400;
   line-height: 1.625;
   margin: 0;
-  /* Chrome fix */
 }
 
 body > div {
+  font-size: 18px;
   font-size: 1.8rem;
 }
 
@@ -371,7 +371,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   line-height: 1.2;
   margin: 0 0 10px;
@@ -694,12 +694,22 @@ th:first-child {
   padding-right: 5%;
 }
 
+/* ## Flex Containers
+--------------------------------------------- */
+.flex-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
 /* ## Column Widths and Positions
 --------------------------------------------- */
-
-/* ## Column Classes
---------------------------------------------- */
-/* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
 
 .first {
   clear: both;
@@ -1218,7 +1228,7 @@ img.alignright,
   margin: 0;
 }
 
-.genesis-responsive-menu .genesis-nav-menu > .menu-item-has-children > a:after {
+.genesis-responsive-menu .genesis-nav-menu > .menu-item-has-children > a::after {
   content: none;
 }
 
@@ -1542,10 +1552,7 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 @media only screen and (min-width: 860px) {
-  body {
-    font-size: 20px;
-    font-size: 2rem;
-  }
+  body,
   body > div {
     font-size: 2rem;
   }
@@ -1785,8 +1792,8 @@ p.entry-meta {
 
 @media print {
   *,
-  *:before,
-  *:after {
+  *::before,
+  *::after {
     background: transparent !important;
     box-shadow: none !important;
     color: #000 !important;
@@ -1796,15 +1803,15 @@ p.entry-meta {
   a:visited {
     text-decoration: underline;
   }
-  a[href]:after {
+  a[href]::after {
     content: " (" attr(href) ")";
   }
-  abbr[title]:after {
+  abbr[title]::after {
     content: " (" attr(title) ")";
   }
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after,
-  .site-title > a:after {
+  a[href^="javascript:"]::after,
+  a[href^="#"]::after,
+  .site-title > a::after {
     content: "";
   }
   thead {

@@ -9,7 +9,7 @@ input[type="search"]{
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	box-sizing: inherit;
 }

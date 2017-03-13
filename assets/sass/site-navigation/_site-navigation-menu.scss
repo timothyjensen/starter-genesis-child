@@ -4,8 +4,8 @@
 
 .genesis-nav-menu {
 	clear: both;
-	@include rem( font-size, 16px );
-	font-weight: 600;
+	font-size: 1.6rem;
+	font-weight: $font-weight-semi-bold;
 	line-height: 1;
 }
 
@@ -50,7 +50,6 @@
 	background-color: $color-white;
 	border: 1px solid #eee;
 	border-top: 0;
-	font-size: 14px;
 	font-size: 1.4rem;
 	padding: 20px;
 	position: relative;

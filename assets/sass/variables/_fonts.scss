@@ -1,7 +1,11 @@
 // Fonts
-$font-sans:  "Roboto", sans-serif;
+$font-sans: 'Source Sans Pro', sans-serif;
 $font-serif: Georgia, Times, "Times New Roman", serif;
 $font-mono:  "Courier 10 Pitch", Courier, monospace;
+
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
 
 // Sets global base em size for the px-to-em and px-to-rem function.
 // This should be the same size as your body font-size.
