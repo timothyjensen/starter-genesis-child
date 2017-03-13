@@ -15,13 +15,13 @@
 
 .entry-title a,
 .sidebar .widget-title a {
-	color: #333;
+	color: $color-primary;
 	text-decoration: none;
 }
 
 .entry-title a:hover,
 .entry-title a:focus {
-	color: #c3251d;
+	color: $color-secondary;
 }
 
 .widget-title {

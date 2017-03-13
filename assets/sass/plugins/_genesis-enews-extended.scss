@@ -3,27 +3,27 @@
 
 .sidebar .enews-widget,
 .sidebar .enews-widget .widget-title {
-	color: #fff;
+	color: $color-white;
 }
 
 .sidebar .widget.enews-widget {
-	background-color: #333;
+	background-color: $color-primary;
 }
 
 .sidebar .enews-widget input,
 .sidebar .enews-widget input:focus {
-	border: 1px solid #333;
+	border: 1px solid $color-primary;
 }
 
 .sidebar .enews-widget input[type="submit"] {
-	background-color: #c3251d;
-	color: #fff;
+	background-color: $color-secondary;
+	color: $color-white;
 }
 
 .sidebar .enews-widget input:hover[type="submit"],
 .sidebar .enews-widget input:focus[type="submit"]  {
-	background-color: #fff;
-	color: #333;
+	background-color: $color-white;
+	color: $color-primary;
 }
 
 .enews-widget input {

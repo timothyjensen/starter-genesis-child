@@ -18,6 +18,6 @@
 
 /* Display outline on focus */
 :focus {
-	color: #333;
-	outline: #ccc solid 1px;
+	color: $color-primary;
+	outline: $color-silver solid 1px;
 }

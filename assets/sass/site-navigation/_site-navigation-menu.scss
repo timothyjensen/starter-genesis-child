@@ -17,7 +17,7 @@
 }
 
 .genesis-nav-menu a {
-	color: #333;
+	color: $color-primary;
 	text-decoration: none;
 	display: block;
 	padding: 32px 20px;
@@ -28,7 +28,7 @@
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus  {
-	color: #c3251d;
+	color: $color-secondary;
 	text-decoration: underline;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .genesis-nav-menu .sub-menu a {
-	background-color: #fff;
+	background-color: $color-white;
 	border: 1px solid #eee;
 	border-top: 0;
 	font-size: 14px;

@@ -3,23 +3,28 @@
 
 .menu-toggle,
 .sub-menu-toggle {
-    background-color: #fff;
+    background-color: $color-white;
     border-width: 0;
-    color: #333;
+    color: $color-primary;
     display: block;
     margin: 0 auto;
     overflow: hidden;
     text-align: center;
     visibility: visible;
+
+    @media only screen and (min-width: 1023px) {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 .menu-toggle:focus,
 .menu-toggle:hover,
 .sub-menu-toggle:focus,
 .sub-menu-toggle:hover {
-    background-color: #fff;
+    background-color: $color-white;
     border-width: 0;
-    color: #c3251d;
+    color: $color-secondary;
 }
 
 .menu-toggle {
@@ -166,13 +171,13 @@
     nav button:hover,
     .menu-toggle:hover,
     .nav-primary {
-        background-color: #fff;
-        color: #000;
+        background-color: $color-white;
+        color: $color-black;
     }
 
     nav button:focus,
     .menu-toggle:focus {
-        background-color: #fff;
-        color: #c3251d;
+        background-color: $color-white;
+        color: $color-secondary;
     }
 }

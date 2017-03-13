@@ -19,8 +19,8 @@
 }
 
 .archive-pagination a {
-	background-color: #fff;
-	color: #333;
+	background-color: $color-white;
+	color: $color-primary;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
@@ -41,6 +41,6 @@
 .archive-pagination a:hover,
 .archive-pagination a:focus,
 .archive-pagination .active a {
-	background-color: #c3251d;
-	color: #fff;
+	background-color: $color-secondary;
+	color: $color-white;
 }

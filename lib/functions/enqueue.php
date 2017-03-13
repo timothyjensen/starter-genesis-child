@@ -10,6 +10,9 @@
  */
 namespace TimJensen\GenesisStarter;
 
+// Remove the child theme stylesheet that is loaded by Genesis.
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
  * Enqueue Scripts and Styles.
@@ -19,6 +22,8 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
+
+	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-stylesheet', get_stylesheet_directory_uri() . '/style.min.css', array(), CHILD_THEME_VERSION );
 
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 

@@ -30,6 +30,7 @@ function load_nonadmin_files() {
 		'setup.php',
 		'components/customizer/css-handler.php',
 		'components/customizer/helpers.php',
+		'functions/helpers.php',
 		'functions/formatting.php',
 		'functions/enqueue.php',
 		'functions/markup.php',

@@ -8,7 +8,7 @@
 	*:after {
 		background: transparent !important;
 		box-shadow: none !important;
-		color: #000 !important;
+		color: $color-black !important;
 		text-shadow: none !important;
 	}
 
@@ -57,7 +57,7 @@
 
 	blockquote,
 	pre {
-		border: 1px solid #999;
+		border: 1px solid $color-tertiary;
 		page-break-inside: avoid;
 	}
 

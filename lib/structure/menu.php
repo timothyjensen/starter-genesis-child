@@ -10,16 +10,6 @@
  */
 namespace TimJensen\GenesisStarter;
 
-/**
- * Unregister menu callbacks.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function unregister_menu_callbacks() {
-	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-}
 
 // Reposition the secondary navigation menu
 add_action( 'genesis_footer', 'genesis_do_subnav', 5 );

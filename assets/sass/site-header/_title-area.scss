@@ -3,6 +3,13 @@
 
 .title-area {
 	padding: 10px 0;
+
+	@media only screen and (min-width: 1023px) {
+		.site-header & {
+			float: left;
+			width: 300px;
+		}
+	}
 }
 
 .header-image .title-area {
@@ -26,7 +33,7 @@
 .site-title a,
 .site-title a:hover,
 .site-title a:focus {
-	color: #333;
+	color: $color-primary;
 	text-decoration: none;
 }
 
@@ -46,10 +53,22 @@
 }
 
 .site-description,
-.site-title,
+.site-title {
+	margin-bottom: 0;
+	text-align: center;
+
+	@media only screen and (min-width: 1023px) {
+		text-align: left;
+	}
+}
+
 .site-header .widget-area {
 	margin-bottom: 0;
 	text-align: center;
+
+	@media only screen and (min-width: 1023px) {
+		text-align: right;
+	}
 }
 
 .header-image .site-description,

@@ -1,75 +1,25 @@
-/*
+/*!
 	Theme Name: Starter Genesis - Modular
 	Theme URI: http://www.studiopress.com/
-	Description: This is the sample theme created for the Genesis Framework.
-	Author: StudioPress
-	Author URI: http://www.studiopress.com/
+	Description: This is a child theme created for the Genesis Framework.
+	Author: Tim Jensen
+	Author URI: https://www.timjensen.us/
 
 	Version: 1.0.0
 
-	Tags: black, red, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 	Template: genesis
 	Template Version: 2.4.2
 
 	License: GPL-2.0+
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
 
-
-/* # Table of Contents
-- HTML5 Reset
-	- Baseline Normalize
-	- Box Sizing
-	- Float Clearing
-- Defaults
-	- Typographical Elements
-	- Headings
-	- Objects
-	- Gallery
-	- Forms
-	- Tables
-	- Screen Reader Text
-- Structure and Layout
-	- Site Containers
-- Common Classes
-	- Avatar
-	- Genesis
-	- Search Form
-	- Titles
-	- WordPress
-- Widgets
-	- Featured Content
-- Plugins
-	- Genesis eNews Extended
-	- Jetpack
-- Skip Links
-- Site Header
-	- Title Area
-- Site Navigation
-	- Accessible Menu
-	- Site Header Navigation
-	- After Header Navigation
-	- Responsive Navigation
-	- Footer Navigation
-- Content Area
-	- Entries
-	- Entry Meta
-	- Pagination
-	- Comments
-- Sidebars
-- Footer Widgets
-- Site Footer
-- Media Queries
-	- Min-width: 860px
-	- Min-width: 1023px
-	- Min-width: 1200px
-	- Min-width: 1340px
-- Print Styles
+	Text Domain: starter-genesis-modular
 */
 
 @import 'bourbon';
-@import 'neat';
+//@import 'neat';
 @import '../../node_modules/sass-rem/rem';
 
 @import 'variables/index';
@@ -87,4 +37,4 @@
 @import 'sidebars/index';
 @import 'footer-widgets/index';
 @import 'site-footer/index';
-@import 'media-queries/index';
+@import 'media-print/index';

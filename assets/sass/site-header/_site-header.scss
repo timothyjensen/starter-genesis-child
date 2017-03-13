@@ -2,9 +2,13 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
+	background-color: $color-white;
 }
 
 .site-header > .wrap {
 	padding: 20px 5%;
+
+	@media only screen and (min-width: 1023px) {
+		padding: 20px 0;
+	}
 }

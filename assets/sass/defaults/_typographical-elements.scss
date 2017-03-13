@@ -7,7 +7,7 @@ html {
 
 body {
     background-color: #eee;
-    color: #333;
+    color: $color-primary;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
     font-size: 1.8rem;
@@ -48,13 +48,13 @@ textarea:focus,
 }
 
 a {
-    color: #c3251d;
+    color: $color-secondary;
     text-decoration: underline;
 }
 
 a:hover,
 a:focus {
-    color: #333;
+    color: $color-primary;
     text-decoration: none;
 }
 
@@ -94,8 +94,8 @@ i {
 }
 
 mark {
-    background: #ddd;
-    color: #000;
+    background: $color-alto;
+    color: $color-black;
 }
 
 blockquote {

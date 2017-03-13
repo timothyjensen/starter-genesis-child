@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     bourbon = require('bourbon').includePaths,
     cssMinify = require('gulp-cssnano'),
+    mqpacker = require('css-mqpacker'),
     neat = require('bourbon-neat').includePaths,
     postcss = require('gulp-postcss'),
     sass = require('gulp-sass'),
@@ -71,11 +72,14 @@ gulp.task('postcss', function(){
         .pipe( postcss([
             autoprefixer({
                 browsers: ['last 2 versions']
-            })
+            }),
+            mqpacker({
+                sort: true
+            }),
         ]))
 
         // creates the sourcemap
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('./'))
 
         .pipe(gulp.dest('./'))
         .pipe(browserSync.stream());
@@ -94,9 +98,6 @@ gulp.task('css:minify', ['postcss'], function() {
         }))
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('./'))
-        // .pipe(notify({
-        //     message: 'Styles are built.'
-        // }))
 });
 
 gulp.task('sass:lint', ['css:minify'], function() {

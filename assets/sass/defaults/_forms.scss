@@ -4,9 +4,9 @@
 input,
 select,
 textarea {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	color: #333;
+	background-color: $color-white;
+	border: 1px solid $color-alto;
+	color: $color-primary;
 	font-size: 18px;
 	font-size: 1.8rem;
 	font-weight: 400;
@@ -16,7 +16,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-	border: 1px solid #999;
+	border: 1px solid $color-tertiary;
 	outline: none;
 }
 
@@ -27,12 +27,12 @@ input[type="radio"] {
 }
 
 ::-moz-placeholder {
-	color: #333;
+	color: $color-primary;
 	opacity: 1;
 }
 
 ::-webkit-input-placeholder {
-	color: #333;
+	color: $color-primary;
 }
 
 button,
@@ -40,9 +40,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #333;
+	background-color: $color-primary;
 	border: 0;
-	color: #fff;
+	color: $color-white;
 	cursor: pointer;
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -63,13 +63,13 @@ input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: #c3251d;
-	color: #fff;
+	background-color: $color-secondary;
+	color: $color-white;
 }
 
 .entry-content .button:hover,
 .entry-content .button:focus {
-	color: #fff;
+	color: $color-white;
 }
 
 .button {
