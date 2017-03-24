@@ -62,7 +62,7 @@ function setup_theme_navigation( $theme_navigation_config ) {
 }
 
 /**
- * Configures the primary nav menu
+ * Configures the primary nav menu.
  *
  * @since 1.0.0
  *
@@ -73,10 +73,39 @@ function setup_theme_navigation( $theme_navigation_config ) {
 function setup_primary_navigation( $primary_navigation_config ) {
 
 	$primary_menu_location = isset( $primary_navigation_config['location'] ) ? $primary_navigation_config['location'] : 'default';
+	$responsive_navigation_style = isset( $primary_navigation_config['responsive-navigation-style'] ) ? $primary_navigation_config['responsive-navigation-style'] : 'default';
 
-	if ( 'header' !== $primary_menu_location ) {
-		return;
+	if ( 'header' == $primary_menu_location ) {
+		do_header_navigation();
 	}
+
+	if ( 'menu-overlay' == $responsive_navigation_style ) {
+		add_genesis_contextual_classes( 'site-header', $responsive_navigation_style );
+	}
+
+}
+
+/**
+ * Add classes to Genesis contextual elements.
+ *
+ * @param string $context The HTML class of the container used as its identifier.
+ * @param string $class  Class(es) to add
+ */
+function add_genesis_contextual_classes( $context, $class ) {
+
+	// Add a class to the header.
+	add_filter( "genesis_attr_{$context}", function ( $attributes ) use ( $class ) {
+
+		$attributes['class'] .= " {$class}";
+
+		return $attributes;
+	} );
+}
+
+/**
+ * Do the theme header navigation.
+ */
+function do_header_navigation() {
 
 	// Remove the body class that is added by Genesis.
 	add_filter( 'body_class', function ( $classes ) {
@@ -88,13 +117,7 @@ function setup_primary_navigation( $primary_navigation_config ) {
 		return $classes;
 	} );
 
-	// Add a class to the header.
-	add_filter( 'genesis_attr_site-header', function ( $attributes ) {
-
-		$attributes['class'] .= ' header-nav';
-
-		return $attributes;
-	} );
+	add_genesis_contextual_classes( 'site-header', 'header-nav' );
 
 	// Remove the header right widget area.
 	unregister_sidebar( 'header-right' );

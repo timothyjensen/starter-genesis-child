@@ -8,17 +8,19 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
+
 namespace TimJensen\GenesisStarter\ThemeConfig;
 
 return [
 	'navigation'         => [
 		'primary'   => [
-			'location' => 'header',
+			'location'                    => 'header',
+			'responsive-navigation-style' => 'menu-overlay',
 		],
 		'secondary' => [
 			'location'     => 'footer',
 			'reduce_depth' => true,
-		]
+		],
 	],
 	'theme_supports'     => [
 		'html5'                           => [
@@ -53,8 +55,8 @@ return [
 		],
 		'genesis-structural-wraps'        => [
 			'header',
-//			'menu-primary',
-//			'menu-secondary',
+			'menu-primary',
+			'menu-secondary',
 			'site-inner',
 			'footer-widgets',
 			'footer'

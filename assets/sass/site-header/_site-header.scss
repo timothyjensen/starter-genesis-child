@@ -11,6 +11,10 @@
 		justify-content: space-between;
 	}
 
+	&.menu-overlay {
+		position: relative;
+	}
+
 	> .wrap {
 		padding: 20px 5%;
 

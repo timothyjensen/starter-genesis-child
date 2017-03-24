@@ -1041,6 +1041,10 @@ img.alignright,
       justify-content: space-between;
 }
 
+.site-header.menu-overlay {
+  position: relative;
+}
+
 .site-header > .wrap {
   padding: 20px 5%;
 }
@@ -1141,8 +1145,7 @@ img.alignright,
   visibility: visible;
 }
 
-.menu-toggle:focus,
-.menu-toggle:hover,
+.menu-toggle:focus, .menu-toggle:hover,
 .sub-menu-toggle:focus,
 .sub-menu-toggle:hover {
   background-color: #fff;
@@ -1152,6 +1155,8 @@ img.alignright,
 
 .menu-toggle {
   line-height: 22px;
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
   position: relative;
   width: 100%;
   z-index: 1000;
@@ -1159,8 +1164,16 @@ img.alignright,
 
 .header-nav .menu-toggle {
   margin-right: 0;
-  position: relative;
+}
+
+.header-nav.menu-overlay .menu-toggle {
+  position: absolute;
+  right: 10px;
   width: auto;
+}
+
+.header-nav.menu-overlay .menu-toggle.activated {
+  position: fixed;
 }
 
 .menu-toggle::before {
@@ -1204,6 +1217,26 @@ img.alignright,
 .genesis-responsive-menu {
   display: none;
   position: relative;
+}
+
+.genesis-responsive-menu.activated {
+  display: block;
+}
+
+.header-nav.menu-overlay .genesis-responsive-menu {
+  display: block;
+  height: 100%;
+  left: -999px;
+  padding: 80px 10px 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: left .3s ease;
+}
+
+.header-nav.menu-overlay .genesis-responsive-menu.activated {
+  left: 0;
 }
 
 .genesis-responsive-menu .wrap {
@@ -1751,6 +1784,11 @@ p.entry-meta {
   .sub-menu-toggle {
     display: none;
     visibility: hidden;
+  }
+  .header-nav.menu-overlay .genesis-responsive-menu {
+    height: auto;
+    padding: 0;
+    position: static;
   }
   .genesis-responsive-menu {
     display: block;
