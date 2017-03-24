@@ -20,7 +20,7 @@ namespace TimJensen\GenesisStarter\Setup;
 function setup_child_theme() {
 	load_child_theme_textdomain( CHILD_TEXT_DOMAIN, apply_filters( 'child_theme_textdomain', CHILD_THEME_DIR . '/languages', CHILD_TEXT_DOMAIN ) );
 
-	$config = include CHILD_CONFIG_DIR . 'theme.php';
+	$config = include CHILD_CONFIG_DIR . 'theme-configuration.php';
 
 	if ( ! empty( $config['navigation'] ) ) {
 		setup_theme_navigation( $config['navigation'] );
@@ -71,22 +71,37 @@ function setup_theme_navigation( $theme_navigation_config ) {
  * @return void
  */
 function setup_primary_navigation( $primary_navigation_config ) {
+
 	$primary_menu_location = isset( $primary_navigation_config['location'] ) ? $primary_navigation_config['location'] : 'default';
 
-	if ( 'header' === $primary_menu_location ) {
-		// Remove the header right widget area
-		unregister_sidebar( 'header-right' );
-
-		// Reposition nav
-		remove_action( 'genesis_after_header', 'genesis_do_nav' );
-		add_action( 'genesis_header', 'genesis_do_nav', 12 );
-
-		add_filter( 'genesis_attr_site-header', function ( $attributes ) {
-			$attributes['class'] .= ' header-nav';
-
-			return $attributes;
-		} );
+	if ( 'header' !== $primary_menu_location ) {
+		return;
 	}
+
+	// Remove the body class that is added by Genesis.
+	add_filter( 'body_class', function ( $classes ) {
+
+		if ( $key = array_search( 'header-full-width', $classes ) ) {
+			unset( $classes[$key] );
+		}
+
+		return $classes;
+	} );
+
+	// Add a class to the header.
+	add_filter( 'genesis_attr_site-header', function ( $attributes ) {
+
+		$attributes['class'] .= ' header-nav';
+
+		return $attributes;
+	} );
+
+	// Remove the header right widget area.
+	unregister_sidebar( 'header-right' );
+
+	// Reposition nav.
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_header', 'genesis_do_nav', 12 );
 }
 
 /**
@@ -111,7 +126,6 @@ function setup_secondary_navigation( $secondary_navigation_config ) {
 	if ( false !== $secondary_menu_reduce_depth ) {
 		add_filter( 'wp_nav_menu_args', 'TimJensen\GenesisStarter\Menus\setup_secondary_menu_args' );
 	}
-
 }
 
 /**
@@ -163,7 +177,3 @@ function unregister_genesis_layouts( $unregister_layouts_config ) {
 		genesis_unregister_layout( $layout );
 	}
 }
-
-
-
-

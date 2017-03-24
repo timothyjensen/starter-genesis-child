@@ -11,16 +11,16 @@
 namespace TimJensen\GenesisStarter\ThemeConfig;
 
 return [
-	'navigation'     => [
+	'navigation'         => [
 		'primary'   => [
 			'location' => 'header',
 		],
 		'secondary' => [
-			'location' => 'footer',
+			'location'     => 'footer',
 			'reduce_depth' => true,
 		]
 	],
-	'theme_supports' => [
+	'theme_supports'     => [
 		'html5'                           => [
 			'caption',
 			'comment-form',
@@ -51,16 +51,16 @@ return [
 			'primary'   => __( 'Header Menu', CHILD_TEXT_DOMAIN ),
 			'secondary' => __( 'Footer Menu', CHILD_TEXT_DOMAIN )
 		],
-		'genesis-structural-wraps' => [
+		'genesis-structural-wraps'        => [
 			'header',
-			'menu-primary',
-			'menu-secondary',
+//			'menu-primary',
+//			'menu-secondary',
 			'site-inner',
 			'footer-widgets',
 			'footer'
 		]
 	],
-	'image_sizes'    => [
+	'image_sizes'        => [
 		'featured-image' => [
 			'width'  => 720,
 			'height' => 400,
