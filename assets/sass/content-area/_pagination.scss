@@ -5,7 +5,7 @@
 	clear: both;
 	margin: 5% auto;
 
-	@media only screen and (min-width: 860px) {
+	@include breakpoint('sm') {
 		margin: 40px 0;
 	}
 }
@@ -32,7 +32,7 @@
 .archive-pagination li a {
 	margin-bottom: 4px;
 
-	@media only screen and (min-width: 860px) {
+	@include breakpoint('sm') {
 		margin-bottom: 0;
 	}
 }

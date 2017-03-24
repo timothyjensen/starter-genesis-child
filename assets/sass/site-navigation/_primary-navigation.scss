@@ -4,13 +4,15 @@
 .nav-primary {
 	background-color: $color-white;
 	border-top: 1px solid #eee;
-	width: 100%;
+	flex: 1 1 100%;
 
 	.header-nav & {
 		border-top: none;
 
-		@media only screen and (min-width: 1023px) {
+		@include breakpoint('md') {
+			flex-basis: 300px;
 			margin-left: auto;
+			text-align: right;
 		}
 	}
 }

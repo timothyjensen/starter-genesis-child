@@ -14,7 +14,7 @@
 	margin: 16px auto;
 	width: 50%;
 
-	@media only screen and (min-width: 1023px) {
+	@include breakpoint('md') {
 		float: right;
 		margin: 12px auto 0;
 	}

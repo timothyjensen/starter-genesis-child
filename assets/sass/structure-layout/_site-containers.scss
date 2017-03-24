@@ -5,19 +5,19 @@
 .wrap {
     margin: 0 auto;
 
-    @media only screen and (min-width: 860px) {
+    @include breakpoint('sm') {
         max-width: 800px;
     }
 
-    @media only screen and (min-width: 1023px) {
+    @include breakpoint('md') {
         max-width: 960px;
     }
 
-    @media only screen and (min-width: 1200px) {
+    @include breakpoint('lg') {
         max-width: 1140px;
     }
 
-    @media only screen and (min-width: 1340px) {
+    @include breakpoint('xl') {
         max-width: 1280px;
     }
 }
@@ -27,12 +27,12 @@
     padding: 5% 5% 0;
     word-wrap: break-word;
 
-    @media only screen and (min-width: 860px) {
+    @include breakpoint('sm') {
         padding: 40px 0 0;
     }
 
     .landing-page & {
-        @media only screen and (min-width: 860px) {
+        @include breakpoint('sm') {
             max-width: 800px;
         }
     }
@@ -42,7 +42,7 @@
     padding-left: 5%;
     padding-right: 5%;
 
-    @media only screen and (min-width: 860px) {
+    @include breakpoint('sm') {
         padding: 0;
     }
 }

@@ -5,28 +5,28 @@
     .content-sidebar-sidebar &,
     .sidebar-content-sidebar &,
     .sidebar-sidebar-content & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             width: 740px;
         }
 
-        @media only screen and (min-width: 1200px) {
+        @include breakpoint('lg') {
             width: 920px;
         }
 
-        @media only screen and (min-width: 1340px) {
+        @include breakpoint('xl') {
             width: 1060px;
         }
     }
 
     .content-sidebar-sidebar & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             float: left;
         }
     }
 
     .sidebar-content-sidebar &,
     .sidebar-sidebar-content & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             float: right;
         }
     }
@@ -35,26 +35,26 @@
 
 .content,
 .site-header .widget-area {
-    @media only screen and (min-width: 1023px) {
+    @include breakpoint('md') {
         float: right;
         width: 620px;
     }
 
-    @media only screen and (min-width: 1200px) {
+    @include breakpoint('lg') {
         width: 800px;
     }
 }
 
 .content {
 
-    @media only screen and (min-width: 1340px) {
+    @include breakpoint('xl') {
         width: 880px;
     }
 
     .content-sidebar &,
     .content-sidebar-sidebar &,
     .sidebar-content-sidebar & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             float: left;
         }
     }
@@ -62,52 +62,52 @@
     .content-sidebar-sidebar &,
     .sidebar-content-sidebar &,
     .sidebar-sidebar-content & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             width: 400px;
         }
 
-        @media only screen and (min-width: 1200px) {
+        @include breakpoint('lg') {
             width: 580px;
         }
 
-        @media only screen and (min-width: 1340px) {
+        @include breakpoint('xl') {
             width: 660px;
         }
     }
 
     .full-width-content & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             width: 100%;
         }
     }
 }
 
 .sidebar-primary {
-    @media only screen and (min-width: 1023px) {
+    @include breakpoint('md') {
         float: right;
         width: 300px;
     }
 
-    @media only screen and (min-width: 1340px) {
+    @include breakpoint('xl') {
         width: 360px;
     }
 
     .sidebar-content &,
     .sidebar-sidebar-content & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             float: left;
         }
     }
 }
 
 .sidebar-secondary {
-    @media only screen and (min-width: 1023px) {
+    @include breakpoint('md') {
         float: left;
         width: 180px;
     }
 
     .content-sidebar-sidebar & {
-        @media only screen and (min-width: 1023px) {
+        @include breakpoint('md') {
             float: right;
         }
     }

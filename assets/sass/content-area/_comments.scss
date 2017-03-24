@@ -9,12 +9,12 @@ font-size: 1.6rem;
     padding: 30px;
     margin-bottom: 5%;
 
-    @media only screen and (min-width: 860px) {
+    @include breakpoint('sm') {
         margin-bottom: 40px;
     }
 }
 
-@media only screen and (min-width: 860px) {
+@include breakpoint('sm') {
     .comment-respond,
     .entry-pings {
         padding: 60px 60px 32px;

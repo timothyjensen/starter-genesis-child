@@ -269,6 +269,7 @@ html {
 }
 
 body {
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background-color: #eee;
   color: #333;
@@ -1118,7 +1119,8 @@ img.alignright,
 .nav-primary {
   background-color: #fff;
   border-top: 1px solid #eee;
-  width: 100%;
+  -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
 }
 
 .header-nav .nav-primary {
@@ -1574,7 +1576,7 @@ p.entry-meta {
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (min-width: 860px) {
+@media (min-width: 860px) {
   body,
   body > div {
     font-size: 2rem;
@@ -1628,7 +1630,7 @@ p.entry-meta {
   }
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) {
   .site-inner,
   .wrap {
     max-width: 960px;
@@ -1740,7 +1742,10 @@ p.entry-meta {
     text-align: right;
   }
   .header-nav .nav-primary {
+    -ms-flex-preferred-size: 300px;
+    flex-basis: 300px;
     margin-left: auto;
+    text-align: right;
   }
   .menu-toggle,
   .sub-menu-toggle {
@@ -1776,7 +1781,7 @@ p.entry-meta {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .site-inner,
   .wrap {
     max-width: 1140px;
@@ -1797,7 +1802,7 @@ p.entry-meta {
   }
 }
 
-@media only screen and (min-width: 1340px) {
+@media (min-width: 1340px) {
   .site-inner,
   .wrap {
     max-width: 1280px;

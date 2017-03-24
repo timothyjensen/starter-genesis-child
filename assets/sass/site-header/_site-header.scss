@@ -14,7 +14,7 @@
 	> .wrap {
 		padding: 20px 5%;
 
-		@media only screen and (min-width: 1023px) {
+		@include breakpoint('md') {
 			padding: 20px 0;
 		}
 	}

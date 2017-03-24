@@ -12,7 +12,7 @@
     text-align: center;
     visibility: visible;
 
-    @media only screen and (min-width: 1023px) {
+    @include breakpoint('md') {
         display: none;
         visibility: hidden;
     }
@@ -88,7 +88,7 @@
     display: none;
     position: relative;
 
-    @media only screen and (min-width: 1023px) {
+    @include breakpoint('md') {
         display: block;
     }
 
@@ -107,7 +107,7 @@
             position: relative;
             text-align: left;
 
-            @media only screen and (min-width: 1023px) {
+            @include breakpoint('md') {
                 margin: 0;
                 display: inline-block;
             }
@@ -118,7 +118,7 @@
                 padding: 15px 20px;
                 width: 100%;
 
-                @media only screen and (min-width: 1023px) {
+                @include breakpoint('md') {
                     margin-bottom: 0;
                     padding: 32px 20px;
                 }
@@ -144,7 +144,7 @@
                 position: static;
                 width: 100%;
 
-                @media only screen and (min-width: 1023px) {
+                @include breakpoint('md') {
                     border-top: 1px solid #eee;
                     padding-left: 0;
                     position: absolute;
@@ -161,7 +161,7 @@
                 .sub-menu {
                     margin: 0;
 
-                    @media only screen and (min-width: 1023px) {
+                    @include breakpoint('md') {
                         margin: -56px 0 0 199px;
                         padding-left: 0;
                     }

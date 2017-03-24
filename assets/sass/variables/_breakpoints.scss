@@ -1,0 +1,17 @@
+// Breakpoints
+
+// Media queries
+@mixin breakpoint($size) {
+
+    @if $size == xs {
+        @media (min-width: 480px)  { @content; }
+    } @else if $size == sm {
+        @media (min-width: 860px) { @content; }
+    } @else if $size == md {
+        @media (min-width: 1023px) { @content; }
+    } @else if $size == lg {
+        @media (min-width: 1200px) { @content; }
+    } @else if $size == xl {
+        @media (min-width: 1340px) { @content; }
+    }
+}

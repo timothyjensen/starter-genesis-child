@@ -8,7 +8,7 @@
 		margin-right: auto;
 	}
 
-	@media only screen and (min-width: 1023px) {
+	@include breakpoint('md') {
 		.site-header & {
 			float: left;
 			width: 300px;
@@ -59,7 +59,7 @@
 	margin-bottom: 0;
 	text-align: center;
 
-	@media only screen and (min-width: 1023px) {
+	@include breakpoint('md') {
 		text-align: left;
 	}
 }
@@ -68,7 +68,7 @@
 	margin-bottom: 0;
 	text-align: center;
 
-	@media only screen and (min-width: 1023px) {
+	@include breakpoint('md') {
 		text-align: right;
 	}
 }
