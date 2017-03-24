@@ -228,7 +228,7 @@ var genesisMenuParams      = typeof genesis_responsive_menu === 'undefined' ? ''
 		_toggleAria( $this, 'aria-pressed' );
 		_toggleAria( $this, 'aria-expanded' );
 		$this.toggleClass( 'activated' );
-		$this.next( 'nav' ).slideToggle( 'fast' );
+		$this.next( 'nav' ).toggleClass( 'activated' );
 	}
 
 	/**
