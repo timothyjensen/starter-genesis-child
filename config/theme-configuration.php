@@ -14,11 +14,11 @@ namespace TimJensen\GenesisStarter\ThemeConfig;
 return [
 	'navigation'         => [
 		'primary'   => [
-			'location'                    => 'header',
-			'responsive-navigation-style' => 'menu-overlay',
+			'location'                    => 'header', // 'header', 'before_header', or default
+			'responsive-navigation-style' => 'menu-overlay', // 'menu-overlay', or default
 		],
 		'secondary' => [
-			'location'     => 'footer',
+			'location'     => 'footer', // 'footer', or default
 			'reduce_depth' => true,
 		],
 	],

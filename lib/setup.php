@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup your child theme
+ * Set up the child theme
  *
  * @package     TimJensen\GenesisStarter
  * @since       1.0.3
@@ -8,6 +8,7 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
+
 namespace TimJensen\GenesisStarter\Setup;
 
 /**
@@ -46,7 +47,7 @@ setup_child_theme();
  *
  * @since 1.0.0
  *
- * @param array $theme_navigation_config
+ * @param array $theme_navigation_config Theme navigation configuration array.
  *
  * @return void
  */
@@ -66,30 +67,29 @@ function setup_theme_navigation( $theme_navigation_config ) {
  *
  * @since 1.0.0
  *
- * @param array $primary_navigation_config
+ * @param array $primary_navigation_config Primary navigation configuration array.
  *
  * @return void
  */
 function setup_primary_navigation( $primary_navigation_config ) {
 
-	$primary_menu_location = isset( $primary_navigation_config['location'] ) ? $primary_navigation_config['location'] : 'default';
+	$primary_menu_location       = isset( $primary_navigation_config['location'] ) ? $primary_navigation_config['location'] : 'default';
 	$responsive_navigation_style = isset( $primary_navigation_config['responsive-navigation-style'] ) ? $primary_navigation_config['responsive-navigation-style'] : 'default';
 
-	if ( 'header' == $primary_menu_location ) {
-		do_header_navigation();
+	if ( function_exists( __NAMESPACE__ . "\\do_{$primary_menu_location}_navigation" ) ) {
+		call_user_func( __NAMESPACE__ . "\\do_{$primary_menu_location}_navigation" );
 	}
 
-	if ( 'menu-overlay' == $responsive_navigation_style ) {
+	if ( 'menu-overlay' === $responsive_navigation_style ) {
 		add_genesis_contextual_classes( 'site-header', $responsive_navigation_style );
 	}
-
 }
 
 /**
  * Add classes to Genesis contextual elements.
  *
  * @param string $context The HTML class of the container used as its identifier.
- * @param string $class  Class(es) to add
+ * @param string $class   Class(es) to add.
  */
 function add_genesis_contextual_classes( $context, $class ) {
 
@@ -110,8 +110,8 @@ function do_header_navigation() {
 	// Remove the body class that is added by Genesis.
 	add_filter( 'body_class', function ( $classes ) {
 
-		if ( $key = array_search( 'header-full-width', $classes ) ) {
-			unset( $classes[$key] );
+		if ( $key = array_search( 'header-full-width', $classes, true ) ) {
+			unset( $classes[ $key ] );
 		}
 
 		return $classes;
@@ -128,11 +128,22 @@ function do_header_navigation() {
 }
 
 /**
+ * Do the before header navigation.
+ *
+ * @since 1.0.1
+ */
+function do_before_header_navigation() {
+
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_before_header', 'genesis_do_nav' );
+}
+
+/**
  * Configures the secondary nav menu
  *
  * @since 1.0.0
  *
- * @param array $secondary_navigation_config
+ * @param array $secondary_navigation_config Secondary navigation configuration array.
  *
  * @return void
  */
