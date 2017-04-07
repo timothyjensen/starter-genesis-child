@@ -22,13 +22,13 @@ return [
 			'reduce_depth' => true,
 		],
 	],
-	'theme_supports'     => [
+	'add_theme_supports'     => [
 		'html5'                           => [
 			'caption',
 			'comment-form',
 			'comment-list',
 			'gallery',
-			'search-form'
+			'search-form',
 		],
 		'genesis-accessibility'           => [
 			'404-page',
@@ -36,7 +36,7 @@ return [
 			'headings',
 			'rems',
 			'search-form',
-			'skip-links'
+			'skip-links',
 		],
 		'genesis-responsive-viewport'     => null,
 		'custom-header'                   => [
@@ -46,21 +46,22 @@ return [
 			'header-text'     => false,
 			'flex-height'     => true,
 		],
-		'custom-background'               => null,
-		'genesis-after-entry-widget-area' => false,
 		'genesis-footer-widgets'          => 1,
 		'genesis-menus'                   => [
 			'primary'   => __( 'Header Menu', CHILD_TEXT_DOMAIN ),
-			'secondary' => __( 'Footer Menu', CHILD_TEXT_DOMAIN )
+			'secondary' => __( 'Footer Menu', CHILD_TEXT_DOMAIN ),
 		],
-		'genesis-structural-wraps'        => [
+		'genesis-structural-wraps' => [
 			'header',
 			'menu-primary',
 			'menu-secondary',
 			'site-inner',
 			'footer-widgets',
-			'footer'
-		]
+			'footer',
+		],
+	],
+	'remove_theme_supports' => [
+//		'genesis-after-entry-widget-area',
 	],
 	'image_sizes'        => [
 		'featured-image' => [
@@ -72,6 +73,10 @@ return [
 	'unregister_layouts' => [
 		'content-sidebar-sidebar',
 		'sidebar-sidebar-content',
-		'sidebar-content-sidebar'
+		'sidebar-content-sidebar',
+	],
+	'remove_genesis_metaboxes'  => [
+		'genesis-theme-settings-scripts',
+		'genesis-theme-settings-blogpage',
 	],
 ];

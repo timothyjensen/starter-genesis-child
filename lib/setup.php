@@ -27,8 +27,12 @@ function setup_child_theme() {
 		setup_theme_navigation( $config['navigation'] );
 	}
 
-	if ( ! empty( $config['theme_supports'] ) ) {
-		register_theme_supports( $config['theme_supports'] );
+	if ( ! empty( $config['add_theme_supports'] ) ) {
+		add_theme_supports( $config['add_theme_supports'] );
+	}
+
+	if ( ! empty( $config['remove_theme_supports'] ) ) {
+		remove_theme_supports( $config['remove_theme_supports'] );
 	}
 
 	if ( ! empty( $config['image_sizes'] ) ) {
@@ -37,6 +41,14 @@ function setup_child_theme() {
 
 	if ( ! empty( $config['unregister_layouts'] ) ) {
 		unregister_genesis_layouts( $config['unregister_layouts'] );
+	}
+
+	if ( ! empty( $config['unregister_sidebars'] ) ) {
+		unregister_sidebars( $config['unregister_sidebars'] );
+	}
+
+	if ( ! empty( $config['remove_genesis_metaboxes'] ) ) {
+		remove_genesis_theme_metaboxes( $config['remove_genesis_metaboxes'] );
 	}
 }
 
@@ -51,14 +63,16 @@ setup_child_theme();
  *
  * @return void
  */
-function setup_theme_navigation( $theme_navigation_config ) {
+function setup_theme_navigation( array $theme_navigation_config ) {
 
-	if ( isset( $theme_navigation_config['primary'] ) ) {
-		setup_primary_navigation( $theme_navigation_config['primary'] );
-	}
+	foreach ( (array) $theme_navigation_config as $menu_location => $menu_arguments ) {
 
-	if ( isset( $theme_navigation_config['secondary'] ) ) {
-		setup_secondary_navigation( $theme_navigation_config['secondary'] );
+		$setup_navigation_callback = __NAMESPACE__ . "\\setup_{$menu_location}_navigation";
+
+		if ( function_exists( $setup_navigation_callback ) ) {
+
+			call_user_func_array( $setup_navigation_callback,  [ $menu_arguments ] );
+		}
 	}
 }
 
@@ -110,7 +124,9 @@ function do_header_navigation() {
 	// Remove the body class that is added by Genesis.
 	add_filter( 'body_class', function ( $classes ) {
 
-		if ( $key = array_search( 'header-full-width', $classes, true ) ) {
+		$key = array_search( 'header-full-width', $classes, true );
+
+		if ( false !== $key ) {
 			unset( $classes[ $key ] );
 		}
 
@@ -167,14 +183,30 @@ function setup_secondary_navigation( $secondary_navigation_config ) {
  *
  * @since 1.0.0
  *
- * @param array $theme_supports_config
+ * @param array $add_theme_supports_config Array of theme supports to add.
  *
  * @return void
  */
-function register_theme_supports( $theme_supports_config ) {
+function add_theme_supports( $add_theme_supports_config ) {
 
-	foreach ( $theme_supports_config as $feature => $args ) {
+	foreach ( $add_theme_supports_config as $feature => $args ) {
 		add_theme_support( $feature, $args );
+	}
+}
+
+/**
+ * Removes theme supports from the site.
+ *
+ * @since 1.0.0
+ *
+ * @param array $remove_theme_supports_config Array of theme supports to remove.
+ *
+ * @return void
+ */
+function remove_theme_supports( $remove_theme_supports_config ) {
+
+	foreach ( $remove_theme_supports_config as $feature ) {
+		remove_theme_support( $feature );
 	}
 }
 
@@ -210,4 +242,39 @@ function unregister_genesis_layouts( $unregister_layouts_config ) {
 	foreach ( $unregister_layouts_config as $layout ) {
 		genesis_unregister_layout( $layout );
 	}
+}
+
+/**
+ * Unregisters the specified Genesis sidebars
+ *
+ * @since 1.0.0
+ *
+ * @param array $unregister_sidebars_config Array of sidebars to unregister.
+ *
+ * @return void
+ */
+function unregister_sidebars( $unregister_sidebars_config ) {
+
+	foreach ( $unregister_sidebars_config as $sidebar ) {
+		unregister_sidebar( $sidebar );
+	}
+}
+
+/**
+ * Removes the specified Genesis theme settings metaboxes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $remove_metaboxes_config Genesis Theme Settings metabox IDs.
+ *
+ * @return void
+ */
+function remove_genesis_theme_metaboxes( $remove_metaboxes_config ) {
+
+	add_action( 'genesis_theme_settings_metaboxes', function ( $pagehook ) use ( $remove_metaboxes_config ) {
+
+		foreach ( $remove_metaboxes_config as $metabox ) {
+			remove_meta_box( $metabox, $pagehook, 'main' );
+		}
+	} );
 }
