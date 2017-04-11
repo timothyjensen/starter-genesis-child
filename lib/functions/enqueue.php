@@ -3,7 +3,7 @@
  * Asset loader handler.
  *
  * @package     TimJensen\GenesisStarter
- * @since       1.0.0
+ * @since       0.1.0
  * @author      Tim Jensen
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
@@ -17,7 +17,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
  * Enqueue Scripts and Styles.
  *
- * @since 1.0.2
+ * @since 0.1.2
  *
  * @return void
  */

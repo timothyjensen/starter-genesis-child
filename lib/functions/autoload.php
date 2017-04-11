@@ -11,17 +11,18 @@
  * forth.  Come on....I taught you better than that.
  *
  * @package     TimJensen\GenesisStarter
- * @since       1.0.0
+ * @since       0.1.0
  * @author      Tim Jensen
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
+
 namespace TimJensen\GenesisStarter;
 
 /**
  * Loads non admin files.
  *
- * @since 1.0.1
+ * @since 0.1.1
  *
  * @return void
  */
@@ -44,26 +45,10 @@ function load_nonadmin_files() {
 	load_specified_files( $filenames );
 }
 
-//add_action( 'admin_init', __NAMESPACE__ . '\load_admin_files' );
-/**
- * Load admin files.
- *
- * @since 1.0.1
- *
- * @return void
- */
-function load_admin_files() {
-	$filenames = array(
-
-	);
-
-	load_specified_files( $filenames );
-}
-
 /**
  * Load each of the specified files.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $filenames
  * @param string $folder_root

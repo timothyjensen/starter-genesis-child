@@ -3,7 +3,7 @@
  * Comments structure handling.
  *
  * @package     TimJensen\GenesisStarter
- * @since       1.0.0
+ * @since       0.1.0
  * @author      Tim Jensen
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
@@ -13,7 +13,7 @@ namespace TimJensen\GenesisStarter;
 /**
  * Unregister comments callbacks.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @return void
  */
@@ -25,7 +25,7 @@ add_filter( 'genesis_comment_list_args', __NAMESPACE__ . '\setup_comments_gravat
 /**
  * Modify size of the Gravatar in the entry comments.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $args
  *

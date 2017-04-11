@@ -1,9 +1,9 @@
 <?php
 /**
- * Set up the child theme
+ * Sets up the child theme.
  *
  * @package     TimJensen\GenesisStarter
- * @since       1.0.3
+ * @since       0.1.3
  * @author      Tim Jensen
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
@@ -14,56 +14,54 @@ namespace TimJensen\GenesisStarter\Setup;
 /**
  * Setup child theme.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @return void
  */
 function setup_child_theme() {
+
 	load_child_theme_textdomain( CHILD_TEXT_DOMAIN, apply_filters( 'child_theme_textdomain', CHILD_THEME_DIR . '/languages', CHILD_TEXT_DOMAIN ) );
 
-	$config = include CHILD_CONFIG_DIR . 'theme-configuration.php';
+	add_widget_text_shortcode_support();
 
-	if ( ! empty( $config['navigation'] ) ) {
-		setup_theme_navigation( $config['navigation'] );
-	}
+	replace_genesis_favicon();
 
-	if ( ! empty( $config['add_theme_supports'] ) ) {
-		add_theme_supports( $config['add_theme_supports'] );
-	}
-
-	if ( ! empty( $config['remove_theme_supports'] ) ) {
-		remove_theme_supports( $config['remove_theme_supports'] );
-	}
-
-	if ( ! empty( $config['image_sizes'] ) ) {
-		register_new_image_sizes( $config['image_sizes'] );
-	}
-
-	if ( ! empty( $config['unregister_layouts'] ) ) {
-		unregister_genesis_layouts( $config['unregister_layouts'] );
-	}
-
-	if ( ! empty( $config['unregister_sidebars'] ) ) {
-		unregister_sidebars( $config['unregister_sidebars'] );
-	}
-
-	if ( ! empty( $config['remove_genesis_metaboxes'] ) ) {
-		remove_genesis_theme_metaboxes( $config['remove_genesis_metaboxes'] );
-	}
+	do_theme_configuration();
 }
 
 setup_child_theme();
 
 /**
+ * Implements the arguments setup in the theme configuration file.
+ *
+ * @since 0.1.1
+ *
+ * @return void
+ */
+function do_theme_configuration() {
+
+	$config = include CHILD_CONFIG_DIR . 'theme-configuration.php';
+
+	foreach ( (array) $config as $callback => $args ) {
+
+		if ( empty( $args ) || false === function_exists( __NAMESPACE__ . "\\$callback" ) ) {
+			continue;
+		}
+
+		call_user_func_array( __NAMESPACE__ . "\\$callback", [ $args ] );
+	}
+}
+
+/**
  * Sets up the navigation menus
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $theme_navigation_config Theme navigation configuration array.
  *
  * @return void
  */
-function setup_theme_navigation( array $theme_navigation_config ) {
+function navigation( array $theme_navigation_config ) {
 
 	foreach ( (array) $theme_navigation_config as $menu_location => $menu_arguments ) {
 
@@ -71,7 +69,7 @@ function setup_theme_navigation( array $theme_navigation_config ) {
 
 		if ( function_exists( $setup_navigation_callback ) ) {
 
-			call_user_func_array( $setup_navigation_callback,  [ $menu_arguments ] );
+			call_user_func_array( $setup_navigation_callback, [ $menu_arguments ] );
 		}
 	}
 }
@@ -79,13 +77,13 @@ function setup_theme_navigation( array $theme_navigation_config ) {
 /**
  * Configures the primary nav menu.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $primary_navigation_config Primary navigation configuration array.
  *
  * @return void
  */
-function setup_primary_navigation( $primary_navigation_config ) {
+function setup_primary_navigation( array $primary_navigation_config ) {
 
 	$primary_menu_location       = isset( $primary_navigation_config['location'] ) ? $primary_navigation_config['location'] : 'default';
 	$responsive_navigation_style = isset( $primary_navigation_config['responsive-navigation-style'] ) ? $primary_navigation_config['responsive-navigation-style'] : 'default';
@@ -146,7 +144,7 @@ function do_header_navigation() {
 /**
  * Do the before header navigation.
  *
- * @since 1.0.1
+ * @since 0.1.1
  */
 function do_before_header_navigation() {
 
@@ -157,13 +155,13 @@ function do_before_header_navigation() {
 /**
  * Configures the secondary nav menu
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $secondary_navigation_config Secondary navigation configuration array.
  *
  * @return void
  */
-function setup_secondary_navigation( $secondary_navigation_config ) {
+function setup_secondary_navigation( array $secondary_navigation_config ) {
 
 	$secondary_menu_location     = isset( $secondary_navigation_config['location'] ) ? $secondary_navigation_config['location'] : null;
 	$secondary_menu_reduce_depth = isset( $secondary_navigation_config['reduce_depth'] ) ? $secondary_navigation_config['reduce_depth'] : false;
@@ -181,15 +179,16 @@ function setup_secondary_navigation( $secondary_navigation_config ) {
 /**
  * Adds theme supports to the site.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $add_theme_supports_config Array of theme supports to add.
  *
  * @return void
  */
-function add_theme_supports( $add_theme_supports_config ) {
+function add_theme_supports( array $add_theme_supports_config ) {
 
-	foreach ( $add_theme_supports_config as $feature => $args ) {
+	foreach ( (array) $add_theme_supports_config as $feature => $args ) {
+
 		add_theme_support( $feature, $args );
 	}
 }
@@ -197,15 +196,16 @@ function add_theme_supports( $add_theme_supports_config ) {
 /**
  * Removes theme supports from the site.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $remove_theme_supports_config Array of theme supports to remove.
  *
  * @return void
  */
-function remove_theme_supports( $remove_theme_supports_config ) {
+function remove_theme_supports( array $remove_theme_supports_config ) {
 
-	foreach ( $remove_theme_supports_config as $feature ) {
+	foreach ( (array) $remove_theme_supports_config as $feature ) {
+
 		remove_theme_support( $feature );
 	}
 }
@@ -213,15 +213,15 @@ function remove_theme_supports( $remove_theme_supports_config ) {
 /**
  * Adds new image sizes.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
- * @param array $image_sizes_config
+ * @param array $image_sizes_config Name and arguments for the new image size(s).
  *
  * @return void
  */
-function register_new_image_sizes( $image_sizes_config ) {
+function add_image_sizes( array $image_sizes_config ) {
 
-	foreach ( $image_sizes_config as $name => $args ) {
+	foreach ( (array) $image_sizes_config as $name => $args ) {
 		$crop = ! empty( $args['crop'] );
 
 		add_image_size( $name, $args['width'], $args['height'], $crop );
@@ -231,15 +231,16 @@ function register_new_image_sizes( $image_sizes_config ) {
 /**
  * Unregisters the specified Genesis layouts
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
- * @param array $unregister_layouts_config
+ * @param array $unregister_layouts_config Genesis layout ids.
  *
  * @return void
  */
-function unregister_genesis_layouts( $unregister_layouts_config ) {
+function genesis_unregister_layouts( array $unregister_layouts_config ) {
 
-	foreach ( $unregister_layouts_config as $layout ) {
+	foreach ( (array) $unregister_layouts_config as $layout ) {
+
 		genesis_unregister_layout( $layout );
 	}
 }
@@ -247,15 +248,16 @@ function unregister_genesis_layouts( $unregister_layouts_config ) {
 /**
  * Unregisters the specified Genesis sidebars
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array $unregister_sidebars_config Array of sidebars to unregister.
  *
  * @return void
  */
-function unregister_sidebars( $unregister_sidebars_config ) {
+function unregister_sidebars( array $unregister_sidebars_config ) {
 
-	foreach ( $unregister_sidebars_config as $sidebar ) {
+	foreach ( (array) $unregister_sidebars_config as $sidebar ) {
+
 		unregister_sidebar( $sidebar );
 	}
 }
@@ -263,18 +265,68 @@ function unregister_sidebars( $unregister_sidebars_config ) {
 /**
  * Removes the specified Genesis theme settings metaboxes.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
- * @param array $remove_metaboxes_config Genesis Theme Settings metabox IDs.
+ * @param array $remove_theme_settings_metaboxes_config Genesis Theme Settings metabox IDs.
  *
  * @return void
  */
-function remove_genesis_theme_metaboxes( $remove_metaboxes_config ) {
+function remove_genesis_theme_settings_metaboxes( array $remove_theme_settings_metaboxes_config ) {
 
-	add_action( 'genesis_theme_settings_metaboxes', function ( $pagehook ) use ( $remove_metaboxes_config ) {
+	add_action( 'genesis_theme_settings_metaboxes', function ( $pagehook ) use ( $remove_theme_settings_metaboxes_config ) {
 
-		foreach ( $remove_metaboxes_config as $metabox ) {
+		foreach ( (array) $remove_theme_settings_metaboxes_config as $metabox ) {
+
 			remove_meta_box( $metabox, $pagehook, 'main' );
 		}
+	} );
+}
+
+/**
+ * Removes Genesis inpost metaboxes.
+ *
+ * @since 0.1.0
+ *
+ * @param array $remove_genesis_inpost_metaboxes_config Genesis metabox callback functions to remove.
+ *
+ * @return void
+ */
+function remove_genesis_inpost_metaboxes( array $remove_genesis_inpost_metaboxes_config ) {
+
+	foreach ( (array) $remove_genesis_inpost_metaboxes_config as $metabox_callback ) {
+
+		remove_action( 'admin_menu', "{$metabox_callback}" );
+	}
+}
+
+/**
+ * Add supports for shortcodes in text widgets.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function add_widget_text_shortcode_support() {
+
+	add_filter( 'widget_text', 'do_shortcode' );
+}
+
+/**
+ * Replaces the default Genesis favicon.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function replace_genesis_favicon() {
+
+	/**
+	 * Use the favicon in the theme's assets folder.
+	 *
+	 * @return string
+	 */
+	add_filter( 'genesis_pre_load_favicon', function () {
+
+		return CHILD_THEME_URL . '/assets/images/favicon.ico';
 	} );
 }

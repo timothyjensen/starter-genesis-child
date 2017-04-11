@@ -3,7 +3,7 @@
  * Description
  *
  * @package     TimJensen\GenesisStarter
- * @since       1.0.0
+ * @since       0.1.0
  * @author      Tim Jensen
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
@@ -13,7 +13,7 @@ namespace TimJensen\GenesisStarter;
 /**
  * Unregister post callbacks.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @return void
  */
@@ -25,7 +25,7 @@ add_filter( 'genesis_author_box_gravatar_size', __NAMESPACE__ . '\setup_author_b
 /**
  * Modify size of the Gravatar in the author box.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param $size
  *
