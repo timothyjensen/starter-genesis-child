@@ -75,6 +75,9 @@ return [
 		'sidebar-sidebar-content',
 		'sidebar-content-sidebar',
 	],
+	'unregister_sidebars' => [
+		'sidebar-alt',
+	],
 	'remove_genesis_theme_settings_metaboxes' => [
 		'genesis-theme-settings-scripts',
 		'genesis-theme-settings-blogpage',
