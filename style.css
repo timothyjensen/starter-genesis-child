@@ -1157,12 +1157,16 @@ img.alignright,
   line-height: 22px;
   -ms-flex-preferred-size: 100px;
       flex-basis: 100px;
+  padding: 14px 28px 14px 14px;
   position: relative;
+  text-transform: uppercase;
   width: 100%;
   z-index: 1000;
 }
 
 .header-nav .menu-toggle {
+  font-size: 14px;
+  font-size: 1.4rem;
   margin-right: 0;
 }
 
@@ -1188,6 +1192,7 @@ img.alignright,
   margin-right: 5px;
   position: absolute;
   right: 0;
+  top: calc(50% - 1.2rem);
 }
 
 .sub-menu-toggle {
