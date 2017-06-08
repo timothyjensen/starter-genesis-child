@@ -61,7 +61,7 @@ return [
 		],
 	],
 	'remove_theme_supports'                   => [
-//		'genesis-after-entry-widget-area',
+		//		'genesis-after-entry-widget-area',
 	],
 	'add_image_sizes'                         => [
 		'featured-image' => [
@@ -75,7 +75,7 @@ return [
 		'sidebar-sidebar-content',
 		'sidebar-content-sidebar',
 	],
-	'unregister_sidebars' => [
+	'unregister_sidebars'                     => [
 		'sidebar-alt',
 	],
 	'remove_genesis_theme_settings_metaboxes' => [
