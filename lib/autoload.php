@@ -12,13 +12,13 @@
 namespace TimJensen\GenesisStarter;
 
 /**
- * Loads non admin files.
+ * Loads theme files.
  *
  * @since 0.1.1
  *
  * @return void
  */
-function load_nonadmin_files() {
+function autoload() {
 	$files = [
 		'setup',
 		'functions/helpers',
@@ -42,3 +42,5 @@ function load_nonadmin_files() {
 		}
 	}
 }
+
+autoload();
