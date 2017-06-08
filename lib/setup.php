@@ -9,7 +9,7 @@
  * @license     GNU General Public License 2.0+
  */
 
-namespace TimJensen\GenesisStarter\Setup;
+namespace TimJensen\GenesisStarter;
 
 /**
  * Setup child theme.
