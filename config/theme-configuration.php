@@ -9,7 +9,7 @@
  * @license     GNU General Public License 2.0+
  */
 
-namespace TimJensen\GenesisStarter\ThemeConfig;
+namespace TimJensen\GenesisStarter;
 
 return [
 	'navigation'                              => [

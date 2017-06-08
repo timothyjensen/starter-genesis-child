@@ -172,7 +172,7 @@ function setup_secondary_navigation( array $secondary_navigation_config ) {
 	}
 
 	if ( false !== $secondary_menu_reduce_depth ) {
-		add_filter( 'wp_nav_menu_args', 'TimJensen\GenesisStarter\Menus\setup_secondary_menu_args' );
+		add_filter( 'wp_nav_menu_args', 'TimJensen\GenesisStarter\setup_secondary_menu_args' );
 	}
 }
 

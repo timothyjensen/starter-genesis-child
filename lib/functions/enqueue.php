@@ -8,7 +8,7 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace TimJensen\GenesisStarter\Enqueue;
+namespace TimJensen\GenesisStarter;
 
 // Remove the child theme stylesheet that is loaded by Genesis so that we can enqueue a minified stylesheet.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );

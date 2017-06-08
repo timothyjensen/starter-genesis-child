@@ -8,7 +8,7 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
-namespace TimJensen\GenesisStarter\Menus;
+namespace TimJensen\GenesisStarter;
 
 /**
  * Reduce the secondary navigation menu to one level depth.
