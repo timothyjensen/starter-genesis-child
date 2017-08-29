@@ -5,7 +5,7 @@
 	Author: Tim Jensen
 	Author URI: https://www.timjensen.us/
 
-	Version: 0.1.3
+	Version: 0.1.4
 
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
@@ -1030,6 +1030,13 @@ img.alignright,
   background-color: #fff;
 }
 
+.sticky-header .site-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .site-header.header-nav > .wrap {
   -ms-flex-align: center;
       align-items: center;
@@ -1039,10 +1046,6 @@ img.alignright,
       flex-wrap: wrap;
   -ms-flex-pack: justify;
       justify-content: space-between;
-}
-
-.site-header.menu-overlay {
-  position: relative;
 }
 
 .site-header > .wrap {
@@ -1214,16 +1217,79 @@ img.alignright,
   transform: rotate(180deg);
 }
 
-.genesis-responsive-menu {
+.js .nav-primary {
   display: none;
   position: relative;
 }
 
-.genesis-responsive-menu.activated {
+.js .nav-primary.activated {
   display: block;
 }
 
-.header-nav.menu-overlay .genesis-responsive-menu {
+.js .nav-primary .wrap {
+  padding: 0;
+}
+
+.js .nav-primary nav.pagination {
+  display: block;
+}
+
+.js .nav-primary .genesis-nav-menu .menu-item {
+  display: block;
+  float: none;
+  position: relative;
+  text-align: left;
+}
+
+.js .nav-primary .genesis-nav-menu .menu-item a {
+  border: none;
+  margin-bottom: 1px;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.js .nav-primary .genesis-nav-menu .menu-item:hover {
+  position: relative;
+}
+
+.js .nav-primary .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
+.js .nav-primary .genesis-nav-menu .menu-item > a:focus ul.sub-menu .sub-menu {
+  left: 0;
+  margin-left: 0;
+}
+
+.js .nav-primary .genesis-nav-menu .menu-item .sub-menu {
+  border: none;
+  clear: both;
+  display: none;
+  margin: 0;
+  opacity: 1;
+  padding-left: 15px;
+  position: static;
+  width: 100%;
+}
+
+.js .nav-primary .genesis-nav-menu .menu-item .sub-menu .sub-menu {
+  margin: 0;
+}
+
+.js .nav-primary .genesis-nav-menu > .menu-item-has-children > a::after {
+  content: none;
+}
+
+.js .nav-primary nav button:hover,
+.js .nav-primary .menu-toggle:hover, .js .nav-primary {
+  background-color: #fff;
+  color: #000;
+}
+
+.js .nav-primary nav button:focus,
+.js .nav-primary .menu-toggle:focus {
+  background-color: #fff;
+  color: #c3251d;
+}
+
+.js .header-nav.menu-overlay .nav-primary {
   display: block;
   height: 100%;
   left: -999px;
@@ -1235,72 +1301,8 @@ img.alignright,
   transition: left .3s ease;
 }
 
-.header-nav.menu-overlay .genesis-responsive-menu.activated {
+.js .header-nav.menu-overlay .nav-primary.activated {
   left: 0;
-}
-
-.genesis-responsive-menu .wrap {
-  padding: 0;
-}
-
-.genesis-responsive-menu nav.pagination {
-  display: block;
-}
-
-.genesis-responsive-menu .genesis-nav-menu .menu-item {
-  display: block;
-  float: none;
-  position: relative;
-  text-align: left;
-}
-
-.genesis-responsive-menu .genesis-nav-menu .menu-item a {
-  border: none;
-  margin-bottom: 1px;
-  padding: 15px 20px;
-  width: 100%;
-}
-
-.genesis-responsive-menu .genesis-nav-menu .menu-item:hover {
-  position: relative;
-}
-
-.genesis-responsive-menu .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
-.genesis-responsive-menu .genesis-nav-menu .menu-item > a:focus ul.sub-menu .sub-menu {
-  left: 0;
-  margin-left: 0;
-}
-
-.genesis-responsive-menu .genesis-nav-menu .menu-item .sub-menu {
-  border: none;
-  clear: both;
-  display: none;
-  margin: 0;
-  opacity: 1;
-  padding-left: 15px;
-  position: static;
-  width: 100%;
-}
-
-.genesis-responsive-menu .genesis-nav-menu .menu-item .sub-menu .sub-menu {
-  margin: 0;
-}
-
-.genesis-responsive-menu .genesis-nav-menu > .menu-item-has-children > a::after {
-  content: none;
-}
-
-.genesis-responsive-menu nav button:hover,
-.genesis-responsive-menu .menu-toggle:hover,
-.genesis-responsive-menu .nav-primary {
-  background-color: #fff;
-  color: #000;
-}
-
-.genesis-responsive-menu nav button:focus,
-.genesis-responsive-menu .menu-toggle:focus {
-  background-color: #fff;
-  color: #c3251d;
 }
 
 /* ## Navigation Menu
@@ -1785,37 +1787,37 @@ p.entry-meta {
     display: none;
     visibility: hidden;
   }
-  .header-nav.menu-overlay .genesis-responsive-menu {
-    height: auto;
-    padding: 0;
-    position: static;
-  }
-  .genesis-responsive-menu {
+  .js .nav-primary {
     display: block;
   }
-  .genesis-responsive-menu .genesis-nav-menu .menu-item {
+  .js .nav-primary .genesis-nav-menu .menu-item {
     margin: 0;
     display: inline-block;
   }
-  .genesis-responsive-menu .genesis-nav-menu .menu-item a {
+  .js .nav-primary .genesis-nav-menu .menu-item a {
     margin-bottom: 0;
     padding: 32px 20px;
   }
-  .genesis-responsive-menu .genesis-nav-menu .menu-item .sub-menu {
+  .js .nav-primary .genesis-nav-menu .menu-item .sub-menu {
     border-top: 1px solid #eee;
     padding-left: 0;
     position: absolute;
     width: 200px;
   }
-  .genesis-responsive-menu .genesis-nav-menu .menu-item .sub-menu a {
+  .js .nav-primary .genesis-nav-menu .menu-item .sub-menu a {
     border: 1px solid #eee;
     border-top: none;
     padding: 20px;
     width: 200px;
   }
-  .genesis-responsive-menu .genesis-nav-menu .menu-item .sub-menu .sub-menu {
+  .js .nav-primary .genesis-nav-menu .menu-item .sub-menu .sub-menu {
     margin: -56px 0 0 199px;
     padding-left: 0;
+  }
+  .js .header-nav.menu-overlay .nav-primary {
+    height: auto;
+    padding: 0;
+    position: static;
   }
 }
 

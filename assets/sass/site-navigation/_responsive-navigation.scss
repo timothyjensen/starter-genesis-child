@@ -90,135 +90,141 @@
     }
 }
 
-.genesis-responsive-menu {
+.js {
 
-    display: none;
-    position: relative;
+    .nav-primary {
 
-    &.activated {
-        display: block;
-    }
-
-    .header-nav.menu-overlay & {
-        display: block;
-        height: 100%;
-        left: -999px;
-        padding: 80px 10px 60px;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-        -webkit-transition: left .3s ease;
-        transition: left .3s ease;
+        display: none;
+        position: relative;
 
         &.activated {
-            left: 0;
+            display: block;
         }
 
         @include breakpoint('md') {
-            height: auto;
-            padding: 0;
-            position: static;
-        }
-    }
-
-    @include breakpoint('md') {
-        display: block;
-    }
-
-    .wrap {
-        padding: 0;
-    }
-
-    nav.pagination {
-        display: block;
-    }
-
-    .genesis-nav-menu {
-        .menu-item {
             display: block;
-            float: none;
-            position: relative;
-            text-align: left;
+        }
 
-            @include breakpoint('md') {
-                margin: 0;
-                display: inline-block;
-            }
+        .wrap {
+            padding: 0;
+        }
 
-            a {
-                border: none;
-                margin-bottom: 1px;
-                padding: 15px 20px;
-                width: 100%;
+        nav.pagination {
+            display: block;
+        }
 
-                @include breakpoint('md') {
-                    margin-bottom: 0;
-                    padding: 32px 20px;
-                }
-            }
-
-            &:hover {
+        .genesis-nav-menu {
+            .menu-item {
+                display: block;
+                float: none;
                 position: relative;
-            }
-
-            > a:focus ul.sub-menu,
-            > a:focus ul.sub-menu .sub-menu {
-                left: 0;
-                margin-left: 0;
-            }
-
-            .sub-menu {
-                border: none;
-                clear: both;
-                display: none;
-                margin: 0;
-                opacity: 1;
-                padding-left: 15px;
-                position: static;
-                width: 100%;
+                text-align: left;
 
                 @include breakpoint('md') {
-                    border-top: 1px solid #eee;
-                    padding-left: 0;
-                    position: absolute;
-                    width: 200px;
+                    margin: 0;
+                    display: inline-block;
+                }
 
-                    a {
-                        border: 1px solid #eee;
-                        border-top: none;
-                        padding: 20px;
-                        width: 200px;
+                a {
+                    border: none;
+                    margin-bottom: 1px;
+                    padding: 15px 20px;
+                    width: 100%;
+
+                    @include breakpoint('md') {
+                        margin-bottom: 0;
+                        padding: 32px 20px;
                     }
+                }
+
+                &:hover {
+                    position: relative;
+                }
+
+                > a:focus ul.sub-menu,
+                > a:focus ul.sub-menu .sub-menu {
+                    left: 0;
+                    margin-left: 0;
                 }
 
                 .sub-menu {
+                    border: none;
+                    clear: both;
+                    display: none;
                     margin: 0;
+                    opacity: 1;
+                    padding-left: 15px;
+                    position: static;
+                    width: 100%;
 
                     @include breakpoint('md') {
-                        margin: -56px 0 0 199px;
+                        border-top: 1px solid #eee;
                         padding-left: 0;
+                        position: absolute;
+                        width: 200px;
+
+                        a {
+                            border: 1px solid #eee;
+                            border-top: none;
+                            padding: 20px;
+                            width: 200px;
+                        }
+                    }
+
+                    .sub-menu {
+                        margin: 0;
+
+                        @include breakpoint('md') {
+                            margin: -56px 0 0 199px;
+                            padding-left: 0;
+                        }
                     }
                 }
             }
+
+            > .menu-item-has-children > a::after {
+                content: none;
+            }
+
         }
 
-        > .menu-item-has-children > a::after {
-            content: none;
+        nav button:hover,
+        .menu-toggle:hover,
+        & {
+            background-color: $color-white;
+            color: $color-black;
         }
 
+        nav button:focus,
+        .menu-toggle:focus {
+            background-color: $color-white;
+            color: $color-secondary;
+        }
     }
 
-    nav button:hover,
-    .menu-toggle:hover,
-    .nav-primary {
-        background-color: $color-white;
-        color: $color-black;
-    }
+    .header-nav.menu-overlay {
 
-    nav button:focus,
-    .menu-toggle:focus {
-        background-color: $color-white;
-        color: $color-secondary;
+        .nav-primary {
+            display: block;
+            height: 100%;
+            left: -999px;
+            padding: 80px 10px 60px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            -webkit-transition: left .3s ease;
+            transition: left .3s ease;
+
+            &.activated {
+                left: 0;
+            }
+
+            @include breakpoint('md') {
+                height: auto;
+                padding: 0;
+                position: static;
+            }
+        }
     }
 }

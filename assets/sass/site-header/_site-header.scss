@@ -4,15 +4,17 @@
 .site-header {
 	background-color: $color-white;
 
+	.sticky-header & {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+	}
+
 	&.header-nav > .wrap {
 		align-items: center;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-	}
-
-	&.menu-overlay {
-		position: relative;
 	}
 
 	> .wrap {

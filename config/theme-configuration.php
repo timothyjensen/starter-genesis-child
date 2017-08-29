@@ -12,6 +12,9 @@
 namespace TimJensen\GenesisStarter\ThemeConfig;
 
 return [
+	'header' => [
+		'position' => 'sticky', // sticky, or default
+	],
 	'navigation'                              => [
 		'primary'   => [
 			'location'                    => 'header', // 'header', 'before_header', or default
@@ -84,7 +87,7 @@ return [
 	],
 	'remove_genesis_inpost_metaboxes'         => [
 		'genesis_add_inpost_seo_box',
-		'genesis_add_inpost_layout_box',
+//		'genesis_add_inpost_layout_box',
 		'genesis_add_inpost_scripts_box',
 	],
 ];
