@@ -3,13 +3,15 @@
 
 .site-footer {
 	background-color: $color-white;
-	border-top: 1px solid #eee;
+	border-top: .1rem solid #eee;
 	font-size: 1.6rem;
 	line-height: 1;
-	padding: 60px 0;
+	padding: 6.0rem 0;
 	text-align: center;
+
+	p {
+		margin-bottom: 0;
+	}
 }
 
-.site-footer p {
-	margin-bottom: 0;
-}
+

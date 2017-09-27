@@ -19,5 +19,5 @@
 /* Display outline on focus */
 :focus {
 	color: $color-primary;
-	outline: $color-silver solid 1px;
+	outline: $color-silver solid .1rem;
 }

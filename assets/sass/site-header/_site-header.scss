@@ -18,10 +18,10 @@
 	}
 
 	> .wrap {
-		padding: 20px 5%;
+		padding: 2.0rem 5%;
 
 		@include breakpoint('md') {
-			padding: 20px 0;
+			padding: 2.0rem 0;
 		}
 	}
 }

@@ -3,37 +3,37 @@
 
 .entry {
 	background-color: $color-white;
-	padding: 30px;
+	padding: 3.0rem;
 	margin-bottom: 5%;
 
 	@include breakpoint('sm') {
-		margin-bottom: 40px;
-		padding: 70px 80px;
+		margin-bottom: 4.0rem;
+		padding: 7.0rem 8.0rem;
 	}
 }
 
-.entry-content ol,
-.entry-content ul {
-	margin-bottom: 28px;
-	margin-left: 40px;
+.entry-content {
+	ol,
+	ul {
+		margin-bottom: 2.8rem;
+		margin-left: 4.0rem;
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	ol ol,
+	ul ul {
+		margin-bottom: 0;
+	}
+
+	code {
+		background-color: $color-primary;
+		color: #eee;
+	}
 }
-
-.entry-content ol > li {
-	list-style-type: decimal;
-}
-
-.entry-content ul > li {
-	list-style-type: disc;
-}
-
-.entry-content ol ol,
-.entry-content ul ul {
-	margin-bottom: 0;
-}
-
-.entry-content code {
-	background-color: $color-primary;
-	color: #eee;
-}
-
-

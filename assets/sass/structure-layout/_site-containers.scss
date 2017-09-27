@@ -28,7 +28,7 @@
     word-wrap: break-word;
 
     @include breakpoint('sm') {
-        padding: 40px 0 0;
+        padding: 4.0rem 0 0;
     }
 
     .landing-page & {
@@ -41,6 +41,10 @@
 .wrap {
     padding-left: 5%;
     padding-right: 5%;
+
+    .site-inner > & {
+        padding: 0;
+    }
 
     @include breakpoint('sm') {
         padding: 0;

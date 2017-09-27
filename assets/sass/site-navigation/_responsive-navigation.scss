@@ -26,8 +26,8 @@
 }
 
 .menu-toggle {
-    line-height: 22px;
-    flex-basis: 100px;
+    line-height: 2.2rem;
+    flex-basis: 10.0rem;
     position: relative;
     width: 100%;
     z-index: 1000;
@@ -38,7 +38,7 @@
 
     .header-nav.menu-overlay & {
         position: absolute;
-        right: 10px;
+        right: 1.0rem;
         width: auto;
 
         &.activated {
@@ -48,12 +48,12 @@
 
     &::before {
         font-size: 1.5em;
-        margin-right: 10px;
+        margin-right: 1.0rem;
         text-rendering: auto;
 
         .header-nav & {
             font-size: 2.4rem;
-            margin-right: 5px;
+            margin-right: .5rem;
             position: absolute;
             right: 0;
         }
@@ -62,14 +62,14 @@
 
 .sub-menu-toggle {
     float: right;
-    padding: 13px 10px;
+    padding: 1.3rem 1.0rem;
     position: absolute;
     right: 0;
     top: 0;
     z-index: 100;
 
     .sub-menu & {
-        padding: 12px 10px;
+        padding: 1.2rem 1.0rem;
     }
 
     &::before {
@@ -127,13 +127,13 @@
 
                 a {
                     border: none;
-                    margin-bottom: 1px;
-                    padding: 15px 20px;
+                    margin-bottom: .1rem;
+                    padding: 1.5rem 2.0rem;
                     width: 100%;
 
                     @include breakpoint('md') {
                         margin-bottom: 0;
-                        padding: 32px 20px;
+                        padding: 2.4rem 2.0rem;
                     }
                 }
 
@@ -153,21 +153,21 @@
                     display: none;
                     margin: 0;
                     opacity: 1;
-                    padding-left: 15px;
+                    padding-left: 1.5rem;
                     position: static;
                     width: 100%;
 
                     @include breakpoint('md') {
-                        border-top: 1px solid #eee;
+                        border-top: .1rem solid #eee;
                         padding-left: 0;
                         position: absolute;
-                        width: 200px;
+                        width: 20.0rem;
 
                         a {
-                            border: 1px solid #eee;
+                            border: .1rem solid #eee;
                             border-top: none;
-                            padding: 20px;
-                            width: 200px;
+                            padding: 2.0rem;
+                            width: 20.0rem;
                         }
                     }
 
@@ -175,7 +175,7 @@
                         margin: 0;
 
                         @include breakpoint('md') {
-                            margin: -56px 0 0 199px;
+                            margin: -5.6rem 0 0 19.9rem;
                             padding-left: 0;
                         }
                     }
@@ -207,8 +207,8 @@
         .nav-primary {
             display: block;
             height: 100%;
-            left: -999px;
-            padding: 80px 10px 60px;
+            left: -99.9rem;
+            padding: 8.0rem 1.0rem 6.0rem;
             position: fixed;
             top: 0;
             width: 100%;

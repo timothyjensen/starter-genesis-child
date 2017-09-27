@@ -19,7 +19,7 @@
 		color: $color-primary;
 		text-decoration: none;
 		display: block;
-		padding: 32px 20px;
+		padding: 3.2rem 2.0rem;
 	}
 
 	a:hover,
@@ -32,8 +32,8 @@
 	}
 
 	.sub-menu {
-		border-top: 1px solid #eee;
-		left: -9999px;
+		border-top: .1rem solid #eee;
+		left: -999.9rem;
 		opacity: 0;
 		position: absolute;
 		-webkit-transition: opacity .4s ease-in-out;
@@ -41,22 +41,22 @@
 		-ms-transition:     opacity .4s ease-in-out;
 		-o-transition:      opacity .4s ease-in-out;
 		transition:         opacity .4s ease-in-out;
-		width: 200px;
+		width: 20.0rem;
 		z-index: 99;
 
 		a {
 			background-color: $color-white;
-			border: 1px solid #eee;
+			border: .1rem solid #eee;
 			border-top: 0;
 			font-size: 1.4rem;
-			padding: 20px;
+			padding: 2.0rem;
 			position: relative;
-			width: 200px;
+			width: 20.0rem;
 			word-wrap: break-word;
 		}
 
 		.sub-menu {
-			margin: -56px 0 0 199px;
+			margin: -5.6rem 0 0 19.9rem;
 			padding-left: 0;
 		}
 	}

@@ -7,12 +7,12 @@ p.entry-meta {
 }
 
 .entry-header .entry-meta {
-	margin-bottom: 24px;
+	margin-bottom: 2.4rem;
 }
 
 .entry-footer .entry-meta {
-	border-top: 1px solid #eee;
-	padding-top: 24px;
+	border-top: .1rem solid #eee;
+	padding-top: 2.4rem;
 }
 
 .entry-categories,
@@ -22,5 +22,5 @@ p.entry-meta {
 
 .entry-comments-link::before {
 	content: "\2014";
-	margin: 0 6px 0 2px;
+	margin: 0 .6rem 0 .2rem;
 }

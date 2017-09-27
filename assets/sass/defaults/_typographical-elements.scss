@@ -47,16 +47,16 @@ textarea:focus,
 a {
     color: $color-secondary;
     text-decoration: underline;
-}
 
-a:hover,
-a:focus {
-    color: $color-primary;
-    text-decoration: none;
+    &:hover,
+    &:focus {
+        color: $color-primary;
+        text-decoration: none;
+    }
 }
 
 p {
-    margin: 0 0 28px;
+    margin: 0 0 2.8rem;
     padding: 0;
 }
 
@@ -73,7 +73,7 @@ li {
 hr {
     border: 0;
     border-collapse: collapse;
-    border-top: 1px solid #eee;
+    border-top: .1rem solid #eee;
     clear: both;
     margin: 1em 0;
 }
@@ -96,15 +96,15 @@ mark {
 }
 
 blockquote {
-    margin: 40px;
+    margin: 4.0rem;
 }
 
 blockquote::before {
     content: "\201C";
     display: block;
-font-size: 3rem;
+    font-size: 3rem;
     height: 0;
-    left: -20px;
+    left: -2.0rem;
     position: relative;
-    top: -10px;
+    top: -1.0rem;
 }

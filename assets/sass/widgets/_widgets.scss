@@ -2,43 +2,45 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .widget {
-	margin-bottom: 40px;
+	margin-bottom: 4.0rem;
 	word-wrap: break-word;
+
+	ul > li {
+		margin-bottom: 1.0rem;
+		padding-bottom: 1.0rem;
+	}
+
+	ul > li:last-of-type {
+		padding-bottom: 0;
+	}
+
+	ol > li {
+		list-style-position: inside;
+		list-style-type: decimal;
+		padding-left: 2.0rem;
+		text-indent: -2.0rem;
+	}
+
+	li li {
+		border: 0;
+		margin: 0 0 0 3.0rem;
+		padding: 0;
+	}
+
+	p:last-child,
+	ul > li:last-of-type,
+	.widget-area &:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
-.widget p:last-child,
-.widget ul > li:last-of-type,
-.widget-area .widget:last-of-type {
-	margin-bottom: 0;
-}
+.widget_calendar {
+	table {
+		width: 100%;
+	}
 
-.widget ul > li {
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-}
-
-.widget ul > li:last-of-type {
-	padding-bottom: 0;
-}
-
-.widget ol > li {
-	list-style-position: inside;
-	list-style-type: decimal;
-	padding-left: 20px;
-	text-indent: -20px;
-}
-
-.widget li li {
-	border: 0;
-	margin: 0 0 0 30px;
-	padding: 0;
-}
-
-.widget_calendar table {
-	width: 100%;
-}
-
-.widget_calendar td,
-.widget_calendar th {
-	text-align: center;
+	td,
+	th {
+		text-align: center;
+	}
 }

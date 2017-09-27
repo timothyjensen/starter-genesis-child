@@ -57,7 +57,7 @@
 
 	blockquote,
 	pre {
-		border: 1px solid $color-tertiary;
+		border: .1rem solid $color-tertiary;
 		page-break-inside: avoid;
 	}
 
@@ -103,7 +103,7 @@
 	.site-inner {
 		padding-top: 0;
 		position: relative;
-		top: -100px;
+		top: -10.0rem;
 	}
 
 	.author-box {
