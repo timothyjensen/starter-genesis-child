@@ -9,6 +9,11 @@
 
 .entry-title {
 	font-size: 3.6rem;
+
+	a:hover,
+	a:focus {
+		color: $color-secondary;
+	}
 }
 
 .entry-title a,
@@ -17,12 +22,7 @@
 	text-decoration: none;
 }
 
-.entry-title a:hover,
-.entry-title a:focus {
-	color: $color-secondary;
-}
-
 .widget-title {
 	font-size: 1.8rem;
-	margin-bottom: 20px;
+	margin-bottom: 2.0rem;
 }

@@ -7,7 +7,6 @@ var gulp = require('gulp'),
     bourbon = require('bourbon').includePaths,
     cssMinify = require('gulp-cssnano'),
     mqpacker = require('css-mqpacker'),
-    pixrem = require( 'gulp-pixrem' ),
     postcss = require('gulp-postcss'),
     sass = require('gulp-sass'),
     sassLint = require('gulp-sass-lint'),
@@ -68,9 +67,6 @@ gulp.task('postcss', function(){
             errLogToConsole: true,
             outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
         }))
-
-        // Generates pixel fallbacks for rem units.
-        .pipe( pixrem() )
 
         .pipe( postcss([
             autoprefixer({

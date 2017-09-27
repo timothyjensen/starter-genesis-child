@@ -7,7 +7,7 @@
 
 .gallery-item {
 	float: left;
-	margin: 0 0 28px;
+	margin: 0 0 2.8rem;
 	text-align: center;
 }
 
@@ -59,12 +59,12 @@
 }
 
 .gallery img {
-	border: 1px solid #eee;
+	border: .1rem solid #eee;
 	height: auto;
-	padding: 4px;
-}
+	padding: .4rem;
 
-.gallery img:hover,
-.gallery img:focus {
-	border: 1px solid $color-tertiary;
+	&:hover,
+	&:focus {
+		border: .1rem solid $color-tertiary;
+	}
 }

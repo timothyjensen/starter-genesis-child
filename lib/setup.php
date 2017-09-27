@@ -53,6 +53,24 @@ function do_theme_configuration() {
 }
 
 /**
+ * Sets the site header as sticky or default.
+ *
+ * @since 0.1.4
+ *
+ * @param array $theme_header_config Theme header configuration.
+ * @return void
+ */
+function header( array $theme_header_config ) {
+	if ( isset( $theme_header_config['position'] ) ) {
+
+		add_filter( 'body_class', function( $classes ) use ( $theme_header_config ) {
+			$classes[] = $theme_header_config['position'] . '-header';
+			return $classes;
+		} );
+	}
+}
+
+/**
  * Sets up the navigation menus
  *
  * @since 0.1.0
@@ -242,6 +260,20 @@ function genesis_unregister_layouts( array $unregister_layouts_config ) {
 	foreach ( (array) $unregister_layouts_config as $layout ) {
 
 		genesis_unregister_layout( $layout );
+	}
+}
+
+/**
+ * Registers new widget areas.
+ *
+ * @param array $register_widgets_config Widget area configuration.
+ * @return void
+ */
+function genesis_register_widget_areas( array $register_widgets_config ) {
+
+	foreach ( (array) $register_widgets_config as $widget ) {
+
+		genesis_register_widget_area( $widget );
 	}
 }
 

@@ -4,6 +4,12 @@
 .site-header {
 	background-color: $color-white;
 
+	.sticky-header & {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+	}
+
 	&.header-nav > .wrap {
 		align-items: center;
 		display: flex;
@@ -11,15 +17,11 @@
 		justify-content: space-between;
 	}
 
-	&.menu-overlay {
-		position: relative;
-	}
-
 	> .wrap {
-		padding: 20px 5%;
+		padding: 2.0rem 5%;
 
 		@include breakpoint('md') {
-			padding: 20px 0;
+			padding: 2.0rem 0;
 		}
 	}
 }

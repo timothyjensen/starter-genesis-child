@@ -6,7 +6,7 @@
 	margin: 5% auto;
 
 	@include breakpoint('sm') {
-		margin: 40px 0;
+		margin: 4.0rem 0;
 	}
 }
 
@@ -14,32 +14,34 @@
 	margin-bottom: 0;
 }
 
-.archive-pagination li {
-	display: inline;
-}
-
-.archive-pagination a {
-	background-color: $color-white;
-	color: $color-primary;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1.6rem;
-	font-weight: $font-weight-semi-bold;
-	padding: 8px 12px;
-	text-decoration: none;
-}
-
-.archive-pagination li a {
-	margin-bottom: 4px;
-
-	@include breakpoint('sm') {
-		margin-bottom: 0;
+.archive-pagination {
+	li {
+		display: inline;
 	}
-}
 
-.archive-pagination a:hover,
-.archive-pagination a:focus,
-.archive-pagination .active a {
-	background-color: $color-secondary;
-	color: $color-white;
+	a {
+		background-color: $color-white;
+		color: $color-primary;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 1.6rem;
+		font-weight: $font-weight-semi-bold;
+		padding: .8rem 1.2rem;
+		text-decoration: none;
+	}
+
+	li a {
+		margin-bottom: .4rem;
+
+		@include breakpoint('sm') {
+			margin-bottom: 0;
+		}
+	}
+
+	a:hover,
+	a:focus,
+	.active a {
+		background-color: $color-secondary;
+		color: $color-white;
+	}
 }

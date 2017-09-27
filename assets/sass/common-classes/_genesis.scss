@@ -4,8 +4,8 @@
 .breadcrumb {
     background-color: $color-white;
     font-size: 1.6rem;
-    margin-bottom: 1px;
-    padding: 12px 30px;
+    margin-bottom: .1rem;
+    padding: 1.2rem 3.0rem;
 }
 
 .after-entry,
@@ -13,12 +13,12 @@
 .author-box {
     background-color: $color-white;
     font-size: 1.8rem;
-    padding: 30px;
+    padding: 3.0rem;
     margin-bottom: 5%;
 
     @include breakpoint('sm') {
-        margin-bottom: 40px;
-        padding: 60px;
+        margin-bottom: 4.0rem;
+        padding: 6.0rem;
     }
 }
 

@@ -12,6 +12,9 @@
 namespace TimJensen\GenesisStarter;
 
 return [
+	'header'                                  => [
+		'position' => 'sticky', // sticky, or default
+	],
 	'navigation'                              => [
 		'primary'   => [
 			'location'                    => 'header', // 'header', 'before_header', or default
@@ -40,8 +43,8 @@ return [
 		],
 		'genesis-responsive-viewport' => null,
 		'custom-header'               => [
-			'width'           => 600,
-			'height'          => 160,
+			'width'           => 300,
+			'height'          => 80,
 			'header-selector' => '.site-title a',
 			'header-text'     => false,
 			'flex-height'     => true,
@@ -64,16 +67,23 @@ return [
 		//		'genesis-after-entry-widget-area',
 	],
 	'add_image_sizes'                         => [
-		'featured-image' => [
-			'width'  => 720,
-			'height' => 400,
-			'crop'   => true,
-		],
+		//		'featured-image' => [
+		//			'width'  => 720,
+		//			'height' => 400,
+		//			'crop'   => true,
+		//		],
 	],
 	'genesis_unregister_layouts'              => [
 		'content-sidebar-sidebar',
 		'sidebar-sidebar-content',
 		'sidebar-content-sidebar',
+	],
+	'genesis_register_widget_areas'                    => [
+		[
+			'id'          => 'page-top-widget-area',
+			'name'        => __( 'Page Top', CHILD_TEXT_DOMAIN ),
+			'description' => __( 'Appears at the topmost section of each page.', CHILD_TEXT_DOMAIN ),
+		],
 	],
 	'unregister_sidebars'                     => [
 		'sidebar-alt',
@@ -84,7 +94,7 @@ return [
 	],
 	'remove_genesis_inpost_metaboxes'         => [
 		'genesis_add_inpost_seo_box',
-		'genesis_add_inpost_layout_box',
+		//		'genesis_add_inpost_layout_box',
 		'genesis_add_inpost_scripts_box',
 	],
 ];
