@@ -6,12 +6,12 @@
     @if $size == xs {
         @media (min-width: 480px)  { @content; }
     } @else if $size == sm {
-        @media (min-width: 860px) { @content; }
+        @media (min-width: 768px) { @content; }
     } @else if $size == md {
-        @media (min-width: 1023px) { @content; }
+        @media (min-width: 1024px) { @content; }
     } @else if $size == lg {
-        @media (min-width: 1200px) { @content; }
+        @media (min-width: 1280px) { @content; }
     } @else if $size == xl {
-        @media (min-width: 1340px) { @content; }
+        @media (min-width: 1440px) { @content; }
     }
 }

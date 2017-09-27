@@ -1767,7 +1767,7 @@ p.entry-meta {
 /* # Print Styles
 ---------------------------------------------------------------------------------------------------- */
 
-@media (min-width: 860px) {
+@media (min-width: 768px) {
   body,
   body > div {
     font-size: 2rem;
@@ -1821,7 +1821,7 @@ p.entry-meta {
   }
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
   .site-inner,
   .wrap {
     max-width: 960px;
@@ -1977,7 +1977,7 @@ p.entry-meta {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .site-inner,
   .wrap {
     max-width: 1140px;
@@ -1998,7 +1998,7 @@ p.entry-meta {
   }
 }
 
-@media (min-width: 1340px) {
+@media (min-width: 1440px) {
   .site-inner,
   .wrap {
     max-width: 1280px;
