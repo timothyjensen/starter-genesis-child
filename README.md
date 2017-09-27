@@ -12,7 +12,6 @@ This theme includes the following features:
 - Configuration-based architecture
 - Modular CSS via Sass
 - Task runner uses gulp
-- Uses Bourbon and Neat
 
 ## Dependencies
 
