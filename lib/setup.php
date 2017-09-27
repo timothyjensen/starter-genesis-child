@@ -264,6 +264,20 @@ function genesis_unregister_layouts( array $unregister_layouts_config ) {
 }
 
 /**
+ * Registers new widget areas.
+ *
+ * @param array $register_widgets_config Widget area configuration.
+ * @return void
+ */
+function genesis_register_widget_areas( array $register_widgets_config ) {
+
+	foreach ( (array) $register_widgets_config as $widget ) {
+
+		genesis_register_widget_area( $widget );
+	}
+}
+
+/**
  * Unregisters the specified Genesis sidebars
  *
  * @since 0.1.0
