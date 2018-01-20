@@ -23,12 +23,11 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
-	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-css',  CHILD_THEME_URL . '/style.css', array(), filemtime( CHILD_THEME_DIR . '/style.css') );
+	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-css', CHILD_THEME_URL . '/style.css', array(), filemtime( CHILD_THEME_DIR . '/style.css' ) );
 
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
-	//	wp_enqueue_style( 'dashicons' );
-
+	// wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';

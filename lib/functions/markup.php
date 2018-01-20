@@ -36,13 +36,13 @@ add_action( 'genesis_before', __NAMESPACE__ . '\\replace_no_js_body_class', 1 );
 function replace_no_js_body_class() {
 	?>
 	<script type="text/javascript">
-        //<![CDATA[
-        (function(){
-            var c = document.body.classList;
-            c.remove('no-js');
-            c.add('js');
-        })();
-        //]]>
+		//<![CDATA[
+		(function(){
+			var c = document.body.classList;
+			c.remove('no-js');
+			c.add('js');
+		})();
+		//]]>
 	</script>
 	<?php
 }

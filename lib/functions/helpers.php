@@ -47,7 +47,8 @@ function get_post_excerpt( $post_id, $word_length = 50, $ellipsis = '&hellip;', 
 		return $excerpt;
 	}
 
-	$more_link = sprintf( '<a href="%s" class="more-link read-more-link">%s</a>',
+	$more_link = sprintf(
+		'<a href="%s" class="more-link read-more-link">%s</a>',
 		get_the_permalink( $post->ID ),
 		apply_filters( 'get_post_excerpt_read_more_text', 'Read More' )
 	);

@@ -64,21 +64,21 @@ return [
 		],
 	],
 	'remove_theme_supports'                   => [
-		//		'genesis-after-entry-widget-area',
+		// 'genesis-after-entry-widget-area',
 	],
 	'add_image_sizes'                         => [
-		//		'featured-image' => [
-		//			'width'  => 720,
-		//			'height' => 400,
-		//			'crop'   => true,
-		//		],
+		// 'featured-image' => [
+		// 'width'  => 720,
+		// 'height' => 400,
+		// 'crop'   => true,
+		// ],
 	],
 	'genesis_unregister_layouts'              => [
 		'content-sidebar-sidebar',
 		'sidebar-sidebar-content',
 		'sidebar-content-sidebar',
 	],
-	'genesis_register_widget_areas'                    => [
+	'genesis_register_widget_areas'           => [
 		[
 			'id'          => 'page-top-widget-area',
 			'name'        => __( 'Page Top', CHILD_TEXT_DOMAIN ),
@@ -94,7 +94,7 @@ return [
 	],
 	'remove_genesis_inpost_metaboxes'         => [
 		'genesis_add_inpost_seo_box',
-		//		'genesis_add_inpost_layout_box',
+		// 'genesis_add_inpost_layout_box',
 		'genesis_add_inpost_scripts_box',
 	],
 ];
