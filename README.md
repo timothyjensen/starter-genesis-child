@@ -1,17 +1,6 @@
 # Genesis Starter Child Theme
 
-This theme is based upon a Know The Code lab series: [Let’s Build a Custom Developer’s Genesis Starter Child Theme](https://knowthecode.io/labs-guide/lets-build-custom-developers-genesis-starter-child-theme).
-
-This is a developer-friendly starter child theme for the [Genesis framework](http://my.studiopress.com/themes/genesis/).  
-
-## Features
-
-This theme includes the following features:
-
-- Modular programming architecture
-- Configuration-based architecture
-- Modular CSS via Sass
-- Task runner uses gulp
+This is a developer-friendly starter child theme for the [Genesis framework](http://my.studiopress.com/themes/genesis/), using Gulp and Sass. The stylesheet takes a mobile-first approach.
 
 ## Dependencies
 
@@ -23,7 +12,7 @@ This child theme requires the following dependencies:
 
 ## Installation
 
-The theme needs for you to install the node modules in order to run gulp.  To do that, navigate into the theme and in the command line (terminal or Bash), type: `npm install` and then enter.  
+In the theme root run the command `npm install && gulp build`. This will build the stylesheet, concatenate and minify JavaScript files.
 
 ## Contributors
 

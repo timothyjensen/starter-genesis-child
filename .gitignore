@@ -3,3 +3,7 @@ assets
 config/acf-json/*
 node_modules
 vendor
+/composer.lock
+/style.css
+/style.css.map
+/develop/languages/*
