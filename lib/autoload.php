@@ -20,10 +20,11 @@ namespace TimJensen\GenesisStarter;
  */
 function autoload() {
 	$files = [
-		'setup',
-		'functions/helpers',
-		'functions/formatting',
+		'vendor/autoload', // Load before others.
+		'setup', // Load before others.
 		'functions/enqueue',
+		'functions/formatting',
+		'functions/helpers',
 		'functions/markup',
 		'structure/archive',
 		'structure/comments',
@@ -38,7 +39,7 @@ function autoload() {
 		$filename = __DIR__ . '/' . $file . '.php';
 
 		if ( file_exists( $filename ) ) {
-			include( $filename );
+			require_once $filename;
 		}
 	}
 }

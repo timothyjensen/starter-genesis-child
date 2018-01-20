@@ -8,6 +8,7 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
+
 namespace TimJensen\GenesisStarter;
 
 /**
@@ -20,7 +21,6 @@ namespace TimJensen\GenesisStarter;
  * @return array
  */
 function setup_secondary_menu_args( array $args ) {
-
 	if ( 'secondary' != $args['theme_location'] ) {
 		return $args;
 	}

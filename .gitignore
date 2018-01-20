@@ -12,3 +12,6 @@ tests/mocks/env/
 /assets/vendor/
 
 .idea/
+config/acf-json/*
+
+/vendor/

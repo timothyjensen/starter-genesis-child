@@ -8,9 +8,10 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
+
 namespace TimJensen\GenesisStarter;
 
-add_filter( 'theme_page_templates', __NAMESPACE__ . '\remove_genesis_page_templates' );
+add_filter( 'theme_page_templates', __NAMESPACE__ . '\\remove_genesis_page_templates' );
 /**
  * Remove Genesis Page Templates
  *

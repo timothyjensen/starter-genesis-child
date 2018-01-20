@@ -19,7 +19,6 @@ namespace TimJensen\GenesisStarter;
  * @return void
  */
 function setup_child_theme() {
-
 	load_child_theme_textdomain( CHILD_TEXT_DOMAIN, apply_filters( 'child_theme_textdomain', CHILD_THEME_DIR . '/languages', CHILD_TEXT_DOMAIN ) );
 
 	add_widget_text_shortcode_support();
@@ -40,7 +39,7 @@ setup_child_theme();
  */
 function do_theme_configuration() {
 
-	$config = include CHILD_CONFIG_DIR . 'theme-configuration.php';
+	$config = include CHILD_CONFIG_DIR . '/theme-configuration.php';
 
 	foreach ( (array) $config as $callback => $args ) {
 
@@ -65,6 +64,7 @@ function header( array $theme_header_config ) {
 
 		add_filter( 'body_class', function( $classes ) use ( $theme_header_config ) {
 			$classes[] = $theme_header_config['position'] . '-header';
+
 			return $classes;
 		} );
 	}
@@ -82,11 +82,9 @@ function header( array $theme_header_config ) {
 function navigation( array $theme_navigation_config ) {
 
 	foreach ( (array) $theme_navigation_config as $menu_location => $menu_arguments ) {
-
 		$setup_navigation_callback = __NAMESPACE__ . "\\setup_{$menu_location}_navigation";
 
 		if ( function_exists( $setup_navigation_callback ) ) {
-
 			call_user_func_array( $setup_navigation_callback, [ $menu_arguments ] );
 		}
 	}
@@ -361,4 +359,16 @@ function replace_genesis_favicon() {
 
 		return CHILD_THEME_URL . '/assets/images/favicon.ico';
 	} );
+}
+
+add_filter( 'acf/settings/save_json', __NAMESPACE__ . '\\acf_json_save_path' );
+/**
+ * Changes the default path for saving ACF field group configuration files.
+ *
+ * @param string $path Path where ACF JSON files are saved.
+ *
+ * @return string
+ */
+function acf_json_save_path( $path ) {
+	return CHILD_CONFIG_DIR . '/acf-json';
 }
