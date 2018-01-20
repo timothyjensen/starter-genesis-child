@@ -2,6 +2,7 @@
     "name": "timothyjensen/starter-genesis-child",
     "description": "A config based Genesis child theme with Gulp and Sass",
     "type": "wordpress-theme",
+    "version": "1.2.0",
     "license": "GPL-2+",
     "authors": [
         {
