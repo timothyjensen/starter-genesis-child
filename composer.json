@@ -1,0 +1,23 @@
+{
+    "name": "timothyjensen/starter-genesis-child",
+    "description": "A config based Genesis child theme with Gulp and Sass",
+    "type": "wordpress-theme",
+    "version": "1.2.0",
+    "license": "GPL-2+",
+    "authors": [
+        {
+            "name": "Tim Jensen",
+            "email": "tim@timjensen.us"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "timothyjensen/acf-field-group-values": "^2.2"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
+        "squizlabs/php_codesniffer": "^3.2",
+        "wp-coding-standards/wpcs": "^0.14.0",
+        "wimg/php-compatibility": "dev-master"
+    }
+}

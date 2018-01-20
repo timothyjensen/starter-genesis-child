@@ -13,5 +13,7 @@
         @media (min-width: 1280px) { @content; }
     } @else if $size == xl {
         @media (min-width: 1440px) { @content; }
+    } @else {
+        @media (min-width: $size) { @content; }
     }
 }

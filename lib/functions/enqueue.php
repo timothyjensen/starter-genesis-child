@@ -14,7 +14,7 @@ namespace TimJensen\GenesisStarter;
 // Remove the child theme stylesheet that is loaded by Genesis so that we can enqueue a minified stylesheet.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
 /**
  * Enqueue Scripts and Styles.
  *
@@ -23,21 +23,18 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
+	wp_enqueue_style( 'starter-genesis-child-css', CHILD_THEME_URL . '/style.css', array(), filemtime( CHILD_THEME_DIR . '/style.css' ) );
 
-	$suffix = ( defined( 'STYLE_DEBUG' ) && STYLE_DEBUG ) ? '' : '.min';
+	wp_enqueue_style( 'starter-genesis-child-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
-	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-stylesheet',  CHILD_THEME_URL . "/style{$suffix}.css", array(), filemtime( CHILD_THEME_DIR . '/style.css') );
-
-	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
-
-	//	wp_enqueue_style( 'dashicons' );
-
+	// wp_enqueue_style( 'dashicons' ); WPCS: ok.
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 
-	wp_enqueue_script( 'genesis-sample-responsive-menu', CHILD_THEME_URL . "/assets/js/responsive-menus{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	wp_enqueue_script( 'starter-genesis-child-js', CHILD_THEME_URL . "/assets/js/theme{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	wp_localize_script(
-		'genesis-sample-responsive-menu',
+		'starter-genesis-child-js',
 		'genesis_responsive_menu',
 		responsive_menu_settings()
 	);
@@ -51,9 +48,9 @@ function enqueue_assets() {
 function responsive_menu_settings() {
 
 	return array(
-		'mainMenu'         => __( 'Menu', CHILD_TEXT_DOMAIN ),
+		'mainMenu'         => __( 'Menu', 'starter-genesis-child' ),
 		'menuIconClass'    => 'fa fa-bars',
-		'subMenu'          => __( 'Submenu', CHILD_TEXT_DOMAIN ),
+		'subMenu'          => __( 'Submenu', 'starter-genesis-child' ),
 		'subMenuIconClass' => 'fa fa-caret-down',
 		'menuClasses'      => array(
 			'combine' => array(

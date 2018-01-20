@@ -8,15 +8,5 @@
  * @link        https://www.timjensen.us
  * @license     GNU General Public License 2.0+
  */
+
 namespace TimJensen\GenesisStarter;
-
-/**
- * Unregister sidebar callbacks.
- *
- * @since 0.1.0
- *
- * @return void
- */
-function unregister_sidebar_callbacks() {
-
-}

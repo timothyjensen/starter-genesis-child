@@ -19,8 +19,7 @@ namespace TimJensen\GenesisStarter;
  * @return void
  */
 function setup_child_theme() {
-
-	load_child_theme_textdomain( CHILD_TEXT_DOMAIN, apply_filters( 'child_theme_textdomain', CHILD_THEME_DIR . '/languages', CHILD_TEXT_DOMAIN ) );
+	load_child_theme_textdomain( 'starter-genesis-child', apply_filters( 'starter_genesis_child', CHILD_THEME_DIR . '/languages', 'starter-genesis-child' ) );
 
 	add_widget_text_shortcode_support();
 
@@ -40,7 +39,7 @@ setup_child_theme();
  */
 function do_theme_configuration() {
 
-	$config = include CHILD_CONFIG_DIR . 'theme-configuration.php';
+	$config = include CHILD_CONFIG_DIR . '/theme-configuration.php';
 
 	foreach ( (array) $config as $callback => $args ) {
 
@@ -63,10 +62,14 @@ function do_theme_configuration() {
 function header( array $theme_header_config ) {
 	if ( isset( $theme_header_config['position'] ) ) {
 
-		add_filter( 'body_class', function( $classes ) use ( $theme_header_config ) {
-			$classes[] = $theme_header_config['position'] . '-header';
-			return $classes;
-		} );
+		add_filter(
+			'body_class',
+			function( $classes ) use ( $theme_header_config ) {
+				$classes[] = $theme_header_config['position'] . '-header';
+
+				return $classes;
+			}
+		);
 	}
 }
 
@@ -82,11 +85,9 @@ function header( array $theme_header_config ) {
 function navigation( array $theme_navigation_config ) {
 
 	foreach ( (array) $theme_navigation_config as $menu_location => $menu_arguments ) {
-
 		$setup_navigation_callback = __NAMESPACE__ . "\\setup_{$menu_location}_navigation";
 
 		if ( function_exists( $setup_navigation_callback ) ) {
-
 			call_user_func_array( $setup_navigation_callback, [ $menu_arguments ] );
 		}
 	}
@@ -124,12 +125,14 @@ function setup_primary_navigation( array $primary_navigation_config ) {
 function add_genesis_contextual_classes( $context, $class ) {
 
 	// Add a class to the header.
-	add_filter( "genesis_attr_{$context}", function ( $attributes ) use ( $class ) {
+	add_filter(
+		"genesis_attr_{$context}", function ( $attributes ) use ( $class ) {
 
-		$attributes['class'] .= " {$class}";
+			$attributes['class'] .= " {$class}";
 
-		return $attributes;
-	} );
+			return $attributes;
+		}
+	);
 }
 
 /**
@@ -138,16 +141,18 @@ function add_genesis_contextual_classes( $context, $class ) {
 function do_header_navigation() {
 
 	// Remove the body class that is added by Genesis.
-	add_filter( 'body_class', function ( $classes ) {
+	add_filter(
+		'body_class', function ( $classes ) {
 
-		$key = array_search( 'header-full-width', $classes, true );
+			$key = array_search( 'header-full-width', $classes, true );
 
-		if ( false !== $key ) {
-			unset( $classes[ $key ] );
+			if ( false !== $key ) {
+				unset( $classes[ $key ] );
+			}
+
+			return $classes;
 		}
-
-		return $classes;
-	} );
+	);
 
 	add_genesis_contextual_classes( 'site-header', 'header-nav' );
 
@@ -305,13 +310,15 @@ function unregister_sidebars( array $unregister_sidebars_config ) {
  */
 function remove_genesis_theme_settings_metaboxes( array $remove_theme_settings_metaboxes_config ) {
 
-	add_action( 'genesis_theme_settings_metaboxes', function ( $pagehook ) use ( $remove_theme_settings_metaboxes_config ) {
+	add_action(
+		'genesis_theme_settings_metaboxes', function ( $pagehook ) use ( $remove_theme_settings_metaboxes_config ) {
 
-		foreach ( (array) $remove_theme_settings_metaboxes_config as $metabox ) {
+			foreach ( (array) $remove_theme_settings_metaboxes_config as $metabox ) {
 
-			remove_meta_box( $metabox, $pagehook, 'main' );
+				remove_meta_box( $metabox, $pagehook, 'main' );
+			}
 		}
-	} );
+	);
 }
 
 /**
@@ -357,8 +364,20 @@ function replace_genesis_favicon() {
 	 *
 	 * @return string
 	 */
-	add_filter( 'genesis_pre_load_favicon', function () {
+	add_filter(
+		'genesis_pre_load_favicon',
+		function () {
+			return CHILD_THEME_URL . '/assets/images/favicon.ico';
+		}
+	);
+}
 
-		return CHILD_THEME_URL . '/assets/images/favicon.ico';
-	} );
+add_filter( 'acf/settings/save_json', __NAMESPACE__ . '\\acf_json_save_path' );
+/**
+ * Changes the default path for saving ACF field group configuration files.
+ *
+ * @return string
+ */
+function acf_json_save_path() {
+	return CHILD_CONFIG_DIR . '/acf-json';
 }

@@ -51,8 +51,8 @@ return [
 		],
 		'genesis-footer-widgets'      => 1,
 		'genesis-menus'               => [
-			'primary'   => __( 'Header Menu', CHILD_TEXT_DOMAIN ),
-			'secondary' => __( 'Footer Menu', CHILD_TEXT_DOMAIN ),
+			'primary'   => __( 'Header Menu', 'starter-genesis-child' ),
+			'secondary' => __( 'Footer Menu', 'starter-genesis-child' ),
 		],
 		'genesis-structural-wraps'    => [
 			'header',
@@ -64,25 +64,25 @@ return [
 		],
 	],
 	'remove_theme_supports'                   => [
-		//		'genesis-after-entry-widget-area',
+		// 'genesis-after-entry-widget-area',
 	],
 	'add_image_sizes'                         => [
-		//		'featured-image' => [
-		//			'width'  => 720,
-		//			'height' => 400,
-		//			'crop'   => true,
-		//		],
+		// 'featured-image' => [
+		// 'width'  => 720,
+		// 'height' => 400,
+		// 'crop'   => true,
+		// ],
 	],
 	'genesis_unregister_layouts'              => [
 		'content-sidebar-sidebar',
 		'sidebar-sidebar-content',
 		'sidebar-content-sidebar',
 	],
-	'genesis_register_widget_areas'                    => [
+	'genesis_register_widget_areas'           => [
 		[
 			'id'          => 'page-top-widget-area',
-			'name'        => __( 'Page Top', CHILD_TEXT_DOMAIN ),
-			'description' => __( 'Appears at the topmost section of each page.', CHILD_TEXT_DOMAIN ),
+			'name'        => __( 'Page Top', 'starter-genesis-child' ),
+			'description' => __( 'Appears at the topmost section of each page.', 'starter-genesis-child' ),
 		],
 	],
 	'unregister_sidebars'                     => [
@@ -94,7 +94,7 @@ return [
 	],
 	'remove_genesis_inpost_metaboxes'         => [
 		'genesis_add_inpost_seo_box',
-		//		'genesis_add_inpost_layout_box',
+		// 'genesis_add_inpost_layout_box',
 		'genesis_add_inpost_scripts_box',
 	],
 ];
