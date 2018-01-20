@@ -7,7 +7,7 @@
     "url": "https://github.com/timothyjensen/genesis-starter-child.git"
   },
   "author": "Tim Jensen <tim@timjensen.us>",
-  "license": "GPL-2+",
+  "license": "GPL-2.0-or-later",
   "main": "Gulpfile.js",
   "devDependencies": {
     "gulp": "^3.9.1",

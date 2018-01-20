@@ -3,7 +3,7 @@
     "description": "A config based Genesis child theme with Gulp and Sass",
     "type": "wordpress-theme",
     "version": "1.2.0",
-    "license": "GPL-2+",
+    "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Tim Jensen",
@@ -19,5 +19,16 @@
         "squizlabs/php_codesniffer": "^3.2",
         "wp-coding-standards/wpcs": "^0.14.0",
         "wimg/php-compatibility": "dev-master"
+    },
+    "scripts": {
+        "install-and-build-theme": [
+            "npm install && gulp build"
+        ],
+        "post-install-cmd": [
+            "@install-and-build-theme"
+        ],
+        "post-update-cmd": [
+            "@install-and-build-theme"
+        ]
     }
 }
