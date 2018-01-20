@@ -16,12 +16,11 @@ namespace TimJensen\GenesisStarter;
  *
  * @since 0.1.0
  *
- * @param array $args
- *
+ * @param array $args Secondary nav menu arguments.
  * @return array
  */
 function setup_secondary_menu_args( array $args ) {
-	if ( 'secondary' != $args['theme_location'] ) {
+	if ( 'secondary' !== $args['theme_location'] ) {
 		return $args;
 	}
 

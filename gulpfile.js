@@ -1,3 +1,9 @@
+/**
+ * Gulp task config file.
+ *
+ * @package starter-genesis-child
+ */
+
 'use strict';
 
 var gulp    = require( 'gulp' ),

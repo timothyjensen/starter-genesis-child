@@ -17,8 +17,7 @@ add_filter( 'genesis_comment_list_args', __NAMESPACE__ . '\\setup_comments_grava
  *
  * @since 0.1.0
  *
- * @param array $args
- *
+ * @param array $args Genesis comment list arguments.
  * @return mixed
  */
 function setup_comments_gravatar( array $args ) {

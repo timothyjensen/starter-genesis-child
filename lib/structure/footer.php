@@ -11,7 +11,7 @@
 
 namespace TimJensen\GenesisStarter;
 
-// add_filter( 'genesis_footer_creds_text', __NAMESPACE__ . '\\do_footer_credits' );
+// add_filter( 'genesis_footer_creds_text', __NAMESPACE__ . '\\do_footer_credits' ); WPCS: ok.
 /**
  * Apply the new footer credits if specified in the Genesis Theme Settings.
  *

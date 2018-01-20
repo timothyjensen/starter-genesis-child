@@ -62,7 +62,8 @@ function do_theme_configuration() {
 function header( array $theme_header_config ) {
 	if ( isset( $theme_header_config['position'] ) ) {
 
-		add_filter( 'body_class',
+		add_filter(
+			'body_class',
 			function( $classes ) use ( $theme_header_config ) {
 				$classes[] = $theme_header_config['position'] . '-header';
 
@@ -364,8 +365,8 @@ function replace_genesis_favicon() {
 	 * @return string
 	 */
 	add_filter(
-		'genesis_pre_load_favicon', function () {
-
+		'genesis_pre_load_favicon',
+		function () {
 			return CHILD_THEME_URL . '/assets/images/favicon.ico';
 		}
 	);
@@ -375,10 +376,8 @@ add_filter( 'acf/settings/save_json', __NAMESPACE__ . '\\acf_json_save_path' );
 /**
  * Changes the default path for saving ACF field group configuration files.
  *
- * @param string $path Path where ACF JSON files are saved.
- *
  * @return string
  */
-function acf_json_save_path( $path ) {
+function acf_json_save_path() {
 	return CHILD_CONFIG_DIR . '/acf-json';
 }

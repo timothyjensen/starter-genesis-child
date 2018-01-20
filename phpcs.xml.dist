@@ -12,6 +12,9 @@
 	<!-- Exclude minified Javascript files. -->
 	<exclude-pattern>*.min.js</exclude-pattern>
 
+	<!-- Exclude minified CSS files. -->
+	<exclude-pattern>*.css</exclude-pattern>
+
 	<!-- Include the WordPress-Extra standard. -->
 	<rule ref="WordPress-Extra">
 		<!--
@@ -64,13 +67,13 @@
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="my-textdomain,library-textdomain"/>
+			<property name="text_domain" type="array" value="starter-genesis-child"/>
 		</properties>
 	</rule>
 
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="my_prefix"/>
+			<property name="prefixes" type="array" value="starter_genesis_child"/>
 		</properties>
 	</rule>
 

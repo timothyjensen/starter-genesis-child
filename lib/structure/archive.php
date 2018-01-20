@@ -15,8 +15,7 @@ add_filter( 'theme_page_templates', __NAMESPACE__ . '\\remove_genesis_page_templ
 /**
  * Remove Genesis Page Templates
  *
- * @param array $page_templates
- *
+ * @param array $page_templates Genesis page templates.
  * @return array
  */
 function remove_genesis_page_templates( $page_templates ) {

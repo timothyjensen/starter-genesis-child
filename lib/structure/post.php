@@ -17,7 +17,7 @@ add_filter( 'genesis_author_box_gravatar_size', __NAMESPACE__ . '\\setup_author_
  *
  * @since 0.1.0
  *
- * @param $size
+ * @param int $size Gravatar size.
  * @return int
  */
 function setup_author_box_gravatar_size( $size ) {

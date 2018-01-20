@@ -11,11 +11,11 @@
 
 namespace TimJensen\GenesisStarter;
 
-$child_theme = wp_get_theme();
+$starter_genesis_child = wp_get_theme();
 
-define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );
+define( 'CHILD_THEME_NAME', $starter_genesis_child->get( 'Name' ) );
 define( 'CHILD_THEME_URL', get_stylesheet_directory_uri() );
-define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );
+define( 'CHILD_THEME_VERSION', $starter_genesis_child->get( 'Version' ) );
 define( 'CHILD_THEME_DIR', __DIR__ );
 define( 'CHILD_CONFIG_DIR', __DIR__ . '/config' );
 
