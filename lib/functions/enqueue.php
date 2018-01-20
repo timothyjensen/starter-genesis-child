@@ -14,7 +14,7 @@ namespace TimJensen\GenesisStarter;
 // Remove the child theme stylesheet that is loaded by Genesis so that we can enqueue a minified stylesheet.
 remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
 /**
  * Enqueue Scripts and Styles.
  *
@@ -23,10 +23,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
-
-	$suffix = ( defined( 'STYLE_DEBUG' ) && STYLE_DEBUG ) ? '' : '.min';
-
-	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-stylesheet',  CHILD_THEME_URL . "/style{$suffix}.css", array(), filemtime( CHILD_THEME_DIR . '/style.css') );
+	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-css',  CHILD_THEME_URL . '/style.css', array(), filemtime( CHILD_THEME_DIR . '/style.css') );
 
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
@@ -34,10 +31,12 @@ function enqueue_assets() {
 
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 
-	wp_enqueue_script( 'genesis-sample-responsive-menu', CHILD_THEME_URL . "/assets/js/responsive-menus{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-js', CHILD_THEME_URL . "/assets/js/theme{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	wp_localize_script(
-		'genesis-sample-responsive-menu',
+		CHILD_TEXT_DOMAIN . '-js',
 		'genesis_responsive_menu',
 		responsive_menu_settings()
 	);

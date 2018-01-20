@@ -1,0 +1,65 @@
+/* ## Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+    background-color: $color-white;
+    font-size: 1.6rem;
+    padding: 3.0rem;
+    margin-bottom: 5%;
+
+    @include breakpoint('sm') {
+        margin-bottom: 4.0rem;
+    }
+}
+
+@include breakpoint('sm') {
+    .comment-respond,
+    .entry-pings {
+        padding: 6.0rem 6.0rem 3.2rem;
+    }
+
+    .entry-comments {
+        padding: 6.0rem;
+    }
+}
+
+.comment-list li {
+    padding: 4.0rem 0 0 3.0rem;
+}
+
+.comment-list .depth-1 {
+    padding-left: 0;
+}
+
+.comment-header {
+    margin-bottom: 3.0rem;
+}
+
+.comment-content {
+    clear: both;
+}
+
+.comment-content ul > li {
+    list-style-type: disc;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+    width: 50%;
+}
+
+.comment-respond label {
+    display: block;
+    margin-right: 1.2rem;
+}
+
+.comment-header p {
+    margin-bottom: 0;
+}
+
+.entry-pings .reply {
+    display: none;
+}

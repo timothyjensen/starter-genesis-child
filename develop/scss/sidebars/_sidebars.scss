@@ -1,0 +1,20 @@
+/* # Sidebars
+---------------------------------------------------------------------------------------------------- */
+
+.sidebar {
+	font-size: 1.6rem;
+	margin-bottom: 5%;
+
+	@include breakpoint('sm') {
+		margin-bottom: 4.0rem;
+	}
+
+	.widget {
+		background-color: $color-white;
+		padding: 3.0rem;
+
+		@include breakpoint('sm') {
+			padding: 4.0rem;
+		}
+	}
+}

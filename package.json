@@ -1,31 +1,24 @@
 {
-  "name": "genesis-starter",
-  "version": "1.0.0",
-  "description": "This is a developer-friendly starter child theme for the [Genesis theming framework](http://my.studiopress.com/themes/genesis/) which includes a modular architecture, Sass, gulp, Bourbon, Neat, and Composer.",
+  "name": "genesis-starter-child",
+  "version": "1.1.0",
+  "description": "A config based Genesis child theme with Gulp and Sass.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timothyjensen/Genesis-Developers-Starter-Theme.git"
+    "url": "https://github.com/timothyjensen/genesis-starter-child.git"
   },
-  "author": "Tim Jensen",
-  "license": "GPL-2",
-  "bugs": {
-    "url": "https://github.com/timothyjensen/Genesis-Developers-Starter-Theme/issues"
-  },
-  "homepage": "https://github.com/timothyjensen/Genesis-Developers-Starter-Theme#readme",
+  "author": "Tim Jensen <tim@timjensen.us>",
+  "license": "GPL-2+",
+  "main": "Gulpfile.js",
   "devDependencies": {
-    "autoprefixer": "^6.7.6",
-    "bourbon": "^4.2.6",
-    "browser-sync": "^2.18.8",
-    "css-mqpacker": "^5.0.1",
     "gulp": "^3.9.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-notify": "^2.2.0",
-    "gulp-pixrem": "^1.0.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sass-lint": "^1.2.0",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-wp-toolkit": "^2.1"
+  },
+  "theme": {
+    "name": "Genesis Starter Child",
+    "description": "A Genesis child theme.",
+    "license": "GPL-2.0+",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "domainpath": "/develop/languages",
+    "template": "genesis"
   }
 }

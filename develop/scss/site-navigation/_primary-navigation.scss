@@ -1,0 +1,18 @@
+/* ## After Header Navigation
+--------------------------------------------- */
+
+.nav-primary {
+	background-color: $color-white;
+	border-top: .1rem solid #eee;
+	flex: 1 1 100%;
+
+	.header-nav & {
+		border-top: none;
+
+		@include breakpoint('md') {
+			flex-basis: 30.0rem;
+			margin-left: auto;
+			text-align: right;
+		}
+	}
+}

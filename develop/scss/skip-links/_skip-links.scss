@@ -1,0 +1,23 @@
+/* # Skip Links
+---------------------------------------------------------------------------------------------------- */
+
+.genesis-skip-link {
+	margin: 0;
+}
+
+.genesis-skip-link li {
+	height: 0;
+	width: 0;
+	list-style: none;
+}
+
+.genesis-skip-link .skip-link-hidden {
+	display: none;
+	visibility: hidden;
+}
+
+/* Display outline on focus */
+:focus {
+	color: $color-primary;
+	outline: $color-silver solid .1rem;
+}

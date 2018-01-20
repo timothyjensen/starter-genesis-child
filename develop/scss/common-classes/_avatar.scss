@@ -1,0 +1,21 @@
+
+/* ## Avatar
+--------------------------------------------- */
+
+.avatar {
+	border-radius: 50%;
+	float: left;
+}
+
+.author-box .avatar,
+.alignleft .avatar {
+	margin-right: 2.4rem;
+}
+
+.alignright .avatar {
+	margin-left: 2.4rem;
+}
+
+.comment .avatar {
+	margin: 0 1.6rem 2.4rem 0;
+}

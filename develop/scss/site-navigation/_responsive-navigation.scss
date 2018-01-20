@@ -1,0 +1,233 @@
+/* ## Responsive Navigation
+--------------------------------------------- */
+
+.menu-toggle,
+.sub-menu-toggle {
+    background-color: $color-white;
+    border-width: 0;
+    color: $color-primary;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    visibility: visible;
+
+    &:focus,
+    &:hover {
+        background-color: $color-white;
+        border-width: 0;
+        color: $color-secondary;
+    }
+
+    @include breakpoint('md') {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.menu-toggle {
+    line-height: 2.2rem;
+    flex-basis: 10.0rem;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 1000;
+
+    .header-nav & {
+        font-size: 1.4rem;
+        margin-right: 0;
+    }
+
+    .header-nav.menu-overlay & {
+        position: absolute;
+        right: 1.0rem;
+        width: auto;
+
+        &.activated {
+            position: fixed;
+        }
+    }
+
+    &::before {
+        font-size: 1.5em;
+        margin-right: 1.0rem;
+        text-rendering: auto;
+
+        .header-nav & {
+            font-size: 2.4rem;
+            margin-right: .5rem;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 1.2rem);
+        }
+    }
+}
+
+.sub-menu-toggle {
+    float: right;
+    padding: 1.3rem 1.0rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+
+    .sub-menu & {
+        padding: 1.2rem 1.0rem;
+    }
+
+    &::before {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+        -webkit-transition: transform .25s ease-in-out;
+        -ms-transition: transform .25s ease-in-out;
+        transition: transform .25s ease-in-out;
+    }
+
+    &.activated::before {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+.js {
+
+    .nav-primary {
+
+        display: none;
+        position: relative;
+
+        &.activated {
+            display: block;
+        }
+
+        @include breakpoint('md') {
+            display: block;
+        }
+
+        .wrap {
+            padding: 0;
+        }
+
+        nav.pagination {
+            display: block;
+        }
+
+        .genesis-nav-menu {
+            .menu-item {
+                display: block;
+                float: none;
+                position: relative;
+                text-align: left;
+
+                @include breakpoint('md') {
+                    margin: 0;
+                    display: inline-block;
+                }
+
+                a {
+                    border: none;
+                    margin-bottom: .1rem;
+                    padding: 1.5rem 2.0rem;
+                    width: 100%;
+
+                    @include breakpoint('md') {
+                        margin-bottom: 0;
+                        padding: 2.4rem 2.0rem;
+                    }
+                }
+
+                &:hover {
+                    position: relative;
+                }
+
+                > a:focus ul.sub-menu,
+                > a:focus ul.sub-menu .sub-menu {
+                    left: 0;
+                    margin-left: 0;
+                }
+
+                .sub-menu {
+                    border: none;
+                    clear: both;
+                    display: none;
+                    margin: 0;
+                    opacity: 1;
+                    padding-left: 1.5rem;
+                    position: static;
+                    width: 100%;
+
+                    @include breakpoint('md') {
+                        border-top: .1rem solid #eee;
+                        padding-left: 0;
+                        position: absolute;
+                        width: 20.0rem;
+
+                        a {
+                            border: .1rem solid #eee;
+                            border-top: none;
+                            padding: 2.0rem;
+                            width: 20.0rem;
+                        }
+                    }
+
+                    .sub-menu {
+                        margin: 0;
+
+                        @include breakpoint('md') {
+                            margin: -5.6rem 0 0 19.9rem;
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+
+            > .menu-item-has-children > a::after {
+                content: none;
+            }
+
+        }
+
+        nav button:hover,
+        .menu-toggle:hover,
+        & {
+            background-color: $color-white;
+            color: $color-black;
+        }
+
+        nav button:focus,
+        .menu-toggle:focus {
+            background-color: $color-white;
+            color: $color-secondary;
+        }
+    }
+
+    .header-nav.menu-overlay {
+
+        .nav-primary {
+            display: block;
+            height: 100%;
+            left: -99.9rem;
+            padding: 8.0rem 1.0rem 6.0rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            -webkit-transition: left .3s ease;
+            transition: left .3s ease;
+
+            &.activated {
+                left: 0;
+            }
+
+            @include breakpoint('md') {
+                height: auto;
+                padding: 0;
+                position: static;
+            }
+        }
+    }
+}

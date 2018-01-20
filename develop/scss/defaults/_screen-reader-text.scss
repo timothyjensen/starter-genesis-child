@@ -1,0 +1,35 @@
+/* ## Screen Reader Text
+--------------------------------------------- */
+
+.screen-reader-shortcut,
+.screen-reader-text,
+.screen-reader-text span {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: .1rem;
+	overflow: hidden;
+	position: absolute !important;
+	width: .1rem;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus,
+.screen-reader-shortcut:focus,
+.genesis-nav-menu .search input[type="submit"]:focus,
+.widget_search input[type="submit"]:focus {
+	background: $color-white;
+	box-shadow: 0 0 .2rem .2rem rgba(0,0,0,.6);
+	clip: auto !important;
+	color: $color-primary;
+	display: block;font-size: 1em;
+	font-weight: bold;
+	height: auto;
+	padding: 1.5rem 2.3rem 1.4rem;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+.more-link {
+	position: relative;
+}
