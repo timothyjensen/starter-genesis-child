@@ -12,6 +12,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "composer/installers": "^1.0",
         "timothyjensen/acf-field-group-values": "^2.2"
     },
     "require-dev": {
