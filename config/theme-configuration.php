@@ -51,8 +51,8 @@ return [
 		],
 		'genesis-footer-widgets'      => 1,
 		'genesis-menus'               => [
-			'primary'   => __( 'Header Menu', CHILD_TEXT_DOMAIN ),
-			'secondary' => __( 'Footer Menu', CHILD_TEXT_DOMAIN ),
+			'primary'   => __( 'Header Menu', 'starter-genesis-child' ),
+			'secondary' => __( 'Footer Menu', 'starter-genesis-child' ),
 		],
 		'genesis-structural-wraps'    => [
 			'header',
@@ -81,8 +81,8 @@ return [
 	'genesis_register_widget_areas'           => [
 		[
 			'id'          => 'page-top-widget-area',
-			'name'        => __( 'Page Top', CHILD_TEXT_DOMAIN ),
-			'description' => __( 'Appears at the topmost section of each page.', CHILD_TEXT_DOMAIN ),
+			'name'        => __( 'Page Top', 'starter-genesis-child' ),
+			'description' => __( 'Appears at the topmost section of each page.', 'starter-genesis-child' ),
 		],
 	],
 	'unregister_sidebars'                     => [

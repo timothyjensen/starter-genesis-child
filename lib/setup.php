@@ -19,7 +19,7 @@ namespace TimJensen\GenesisStarter;
  * @return void
  */
 function setup_child_theme() {
-	load_child_theme_textdomain( CHILD_TEXT_DOMAIN, apply_filters( 'child_theme_textdomain', CHILD_THEME_DIR . '/languages', CHILD_TEXT_DOMAIN ) );
+	load_child_theme_textdomain( 'starter-genesis-child', apply_filters( 'starter_genesis_child', CHILD_THEME_DIR . '/languages', 'starter-genesis-child' ) );
 
 	add_widget_text_shortcode_support();
 
