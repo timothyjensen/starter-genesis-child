@@ -23,7 +23,7 @@
     },
     "scripts": {
         "install-and-build-theme": [
-            "npm install && gulp build"
+            "npm install && node_modules/.bin/gulp build"
         ],
         "post-install-cmd": [
             "@install-and-build-theme"
