@@ -1,9 +1,9 @@
 .idea
-assets
-config/acf-json/*
-node_modules
-vendor
+/assets
 /composer.lock
+/config/acf-json/*
+/develop/languages
 /style.css
 /style.css.map
-/develop/languages
+node_modules
+vendor
