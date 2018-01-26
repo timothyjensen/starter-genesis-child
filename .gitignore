@@ -6,4 +6,4 @@ vendor
 /composer.lock
 /style.css
 /style.css.map
-/develop/languages/*
+/develop/languages
