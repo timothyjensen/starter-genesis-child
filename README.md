@@ -1,13 +1,11 @@
 # Genesis Starter Child Theme
 
-This is a developer-friendly starter child theme for the [Genesis framework](http://my.studiopress.com/themes/genesis/), using Gulp and Sass. The stylesheet takes a mobile-first approach.
+This is a developer-friendly starter child theme for the [Genesis framework](http://my.studiopress.com/themes/genesis/), using Gulp and Sass. The build process uses [Gulp WP Toolkit](https://github.com/craigsimps/gulp-wp-toolkit) and the stylesheet takes a mobile-first approach.
 
 ## Dependencies
 
-This child theme requires the following dependencies:
-
 - [Genesis framework](http://my.studiopress.com/themes/genesis/)
-- [WordPress](https://wordpress.org/download/)
+- PHP 7+
 - Node.js and npm installed on your local machine
 
 ## Installation

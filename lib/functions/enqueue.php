@@ -23,14 +23,15 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_assets' );
  * @return void
  */
 function enqueue_assets() {
-	wp_enqueue_style( 'starter-genesis-child-css', CHILD_THEME_URL . '/style.css', array(), filemtime( CHILD_THEME_DIR . '/style.css' ) );
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+	wp_enqueue_style( 'starter-genesis-child-css', CHILD_THEME_URL . "/style{$suffix}.css", array(), filemtime( CHILD_THEME_DIR . '/style.css' ) );
 
 	wp_enqueue_style( 'starter-genesis-child-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 
 	// wp_enqueue_style( 'dashicons' ); WPCS: ok.
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
 
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	wp_enqueue_script( 'starter-genesis-child-js', CHILD_THEME_URL . "/assets/js/theme{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	wp_localize_script(

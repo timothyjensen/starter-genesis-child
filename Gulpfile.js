@@ -29,11 +29,23 @@ toolkit.extendConfig(
 		},
 		css: {
 			basefontsize: 10, // Used by postcss-pxtorem.
-			remmediaquery: false
+			remmediaquery: false,
+            scss: {
+                'style': {
+                    src: 'develop/scss/style.scss',
+                    dest: './',
+                    outputStyle: 'expanded',
+                },
+                'style.min': {
+                    src: 'develop/scss/style.scss',
+                    dest: './',
+                    outputStyle: 'compressed',
+                }
+            },
 		},
 		js: {
 			'theme': [
-			'develop/js/responsive-menus.js'
+				'develop/js/responsive-menus.js'
 			]
 		},
 		dest: {
